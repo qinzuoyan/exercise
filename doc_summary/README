@@ -1,0 +1,9 @@
+Document Summary
+================
+There is a document with a sequence of words.
+
+Here comes a query with several keywords.
+
+Now I want find a sub-sequence of the document, with minimal length, containing
+all the keyworks (in any order). We call it document summary.
+

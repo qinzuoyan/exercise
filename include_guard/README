@@ -1,0 +1,7 @@
+Transfer Name To Include Guard
+==============================
+Generate include guard string from name, for example:
+  a --> _A_
+  a.b --> _A_B_
+  simple.ver_1_0_0.HelloService  --> _SIMPLE_VER_1_0_0_HELLO_SERVICE_
+  simple.ver_1_0_0.ASTParser --> _SIMPLE_VER_1_0_0_AST_PARSER_

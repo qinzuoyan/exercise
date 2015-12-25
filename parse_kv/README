@@ -1,0 +1,4 @@
+Parse Key Value Pair
+====================
+Parse key-value pairs from data, the data is in the following format:
+  k1:v1,k2:v2, ... ,kn:vn

@@ -1,0 +1,4 @@
+Find Duplicate Number
+=====================
+Give an array of numbers, the arrary length is n,
+each number is in range of [0,n), find out a duplicate number.
