@@ -17,11 +17,13 @@ int main()
     Servlet s2 = (Servlet)0x2;
     Servlet s3 = (Servlet)0x3;
     Servlet s4 = (Servlet)0x4;
+    Servlet s5 = (Servlet)0x5;
     ServletMap m;
     m["/"] = s1;
     m["/a"] = s2;
     m["/a/b"] = s3;
     m["/a/b/c/d/e/f/g/h/i"] = s4;
+    m["/a/bcde"] = s5;
 
     check_find(m, "", NULL, 0);
     check_find(m, "/", s1, 1);
@@ -34,6 +36,9 @@ int main()
     check_find(m, "/a/b/c/d/e/f/g", s3, 3);
     check_find(m, "/a/b/c/d/e/f/g/h", s3, 3);
     check_find(m, "/a/b/c/d/e/f/g/h/i", s4, 3);
+    check_find(m, "/a/bbbb", s2, 2);
+    check_find(m, "/a/bcde", s5, 2);
+    check_find(m, "/a/bcdefghi", s2, 2);
     check_find(m, "/a/x", s2, 2);
     check_find(m, "/b", NULL, 1);
     check_find(m, "/b/c", NULL, 1);
