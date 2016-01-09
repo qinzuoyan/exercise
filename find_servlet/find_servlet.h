@@ -16,7 +16,10 @@ typedef std::map<std::string, Servlet> ServletMap;
 //    /b
 //    ... ...
 //
+// given "path", this function find the Servlet of longest prefix path
+//
 // return InvalidServlet if not found
+//
 // "search_map_count" gives how many times seaching in "servlet_map"
 Servlet find_servlet(const ServletMap& servlet_map,
         const std::string& path, int* search_map_count);
