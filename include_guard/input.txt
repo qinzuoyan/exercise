@@ -1,0 +1,10 @@
+a
+a.b
+simple.HelloService
+MY.ASTParser12
+simple.ABC2XYZ
+A1B2C3D4
+a1b2c3d4
+ABC
+my.ABC
+my.A.B.c.d.e12.FFFFFFFFFFFFFFFF.g000
