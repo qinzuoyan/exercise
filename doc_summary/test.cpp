@@ -33,14 +33,26 @@ void check(const std::string& doc_str, const std::string& query_str,
     split_string(doc_str, " ", &doc);
     std::vector<std::string> keywords;
     split_string(query_str, " ", &keywords);
-    int start_pos, len;
-    bool ret = find_minimal_doc_summary(doc, keywords, &start_pos, &len);
-    assert(ret == expect_ret);
-    if (ret)
-    {
-        assert(start_pos == expect_start_pos);
-        assert(len == expect_len);
-    }
+	{
+		int start_pos, len;
+		bool ret = find_minimal_doc_summary(doc, keywords, &start_pos, &len);
+		assert(ret == expect_ret);
+		if (ret)
+		{
+			assert(start_pos == expect_start_pos);
+			assert(len == expect_len);
+		}
+	}
+	{
+		int start_pos, len;
+		bool ret = find_minimal_doc_summary_simple(doc, keywords, &start_pos, &len);
+		assert(ret == expect_ret);
+		if (ret)
+		{
+			assert(start_pos == expect_start_pos);
+			assert(len == expect_len);
+		}
+	}
 }
 
 int main()

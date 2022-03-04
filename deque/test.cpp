@@ -38,6 +38,8 @@ int main()
 
     assert(q.pop_front());
     assert(q.size() == 0u);
+    assert(!q.pop_front());
+    assert(!q.pop_back());
 
     return 0;
 }

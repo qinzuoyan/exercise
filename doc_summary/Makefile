@@ -9,7 +9,7 @@ OBJS=test
 
 all: $(OBJS)
 
-test: test.cpp doc_summary.cpp
+test: test.cpp doc_summary.cpp doc_summary_simple.cpp
 	$(CXX) $^ $(CXX_INC) $(CXX_LINK) $(CXX_FLAGS) -o $@
 
 clean:

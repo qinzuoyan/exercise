@@ -12,6 +12,11 @@ bool find_minimal_doc_summary(
         const std::vector<std::string>& keywords,
         int* start_pos, int* len);
 
+bool find_minimal_doc_summary_simple(
+        const std::vector<std::string>& doc,
+        const std::vector<std::string>& keywords,
+        int* start_pos, int* len);
+
 #endif  //__DOC_SUMMARY_H_
 
 /* vim: set ts=4 sw=4 sts=4 tw=100 */
