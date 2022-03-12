@@ -5,12 +5,11 @@ CXX_LINK=-Xlinker "-(" \
   -lpthread \
   -Xlinker "-)"
 
-OBJS=test
+all: test.cpp *.cpp
+	$(CXX) $^ $(CXX_INC) $(CXX_LINK) $(CXX_FLAGS) -o $@
 
-all: $(OBJS)
-
-test: test.cpp *.cpp
+test: test.cpp
 	$(CXX) $^ $(CXX_INC) $(CXX_LINK) $(CXX_FLAGS) -o $@
 
 clean:
-	-rm -f *.o *.a $(OBJS)
+	-rm -f *.o *.a test
