@@ -8,8 +8,8 @@ CXX_LINK=-Xlinker "-(" \
 all: test.cpp *.cpp
 	$(CXX) $^ $(CXX_INC) $(CXX_LINK) $(CXX_FLAGS) -o $@
 
-test: test.cpp
-	$(CXX) $^ $(CXX_INC) $(CXX_LINK) $(CXX_FLAGS) -o $@
+test: test.cpp *.cpp
+	$(CXX) test.cpp $(CXX_INC) $(CXX_LINK) $(CXX_FLAGS) -o $@
 
 clean:
-	-rm -f *.o *.a test
+	-rm -f *.o *.a test all
