@@ -13,9 +13,8 @@ public:
     int find(int x) {
         return _v[x] < 0 ? x : (_v[x] = find(_v[x]));
     }
-    int merge(int i, int j) {
-        int x = find(i), y = find(j);
-        if (x == y)
+    int merge(int x, int y) {
+        if ((x = find(x)) == (y = find(y)))
             return x;
         if (_v[x] < _v[y]) {
             // merge y to x
@@ -45,6 +44,9 @@ public:
             }
         }
         return r;
+    }
+    int set_size(int x) {
+        return -_v[find(x)];
     }
 private:
     std::vector<int> _v;
