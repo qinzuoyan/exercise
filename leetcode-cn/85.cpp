@@ -6,6 +6,7 @@ class Solution {
 public:
     int maximalRectangle(vector<vector<char>>& matrix) {
         if (matrix.empty() || matrix[0].empty()) return 0;
+        /*
         int m = matrix.size(), n = matrix[0].size();
         vector<vector<pair<int,int>>> v;
         v.resize(m);
@@ -23,5 +24,7 @@ public:
             }
         }
         return v[m-1][n-1];
+        */
+        return 0;
     }
 };
