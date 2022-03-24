@@ -6,32 +6,22 @@ class Solution {
 public:
     int maximalRectangle(vector<vector<char>>& matrix) {
         if (matrix.empty() || matrix[0].empty()) return 0;
-        vector<vector<pair<int,int>>> vec1,vec2;
-        vec1.resize(matrix.size());
-        vec2.resize(matrix.size());
-        int r = 0;
-        for (size_t i = 0; i < matrix.size(); i++) {
-            vector<char>& m = matrix[i];
-            vector<pair<int,int>>& v1 = vec1[i];
-            vector<pair<int,int>>& v2 = vec2[i];
-            v1.resize(m.size());
-            v2.resize(m.size());
-            for (size_t j = 0; j < m.size(); j++) {
-                if (m[j] == '0') {
-                    v1[j] = make_pair(0,0);
-                    v2[j] = make_pair(0,0);
-                } else {
-                    /*
-                    pair<int,int> left1,up1;
-                    if (j > 0) left1 = vec1[i][j-1];
-                    if (i > 0) up1 = vec1[i-1][j];
-                    v[j].first = min(left.first, up.first-1);
-                    v[j].second = min(left.second-1, up.second);
-                    int t = v[j].first * v[j].second;
-                    if (t > r) r = t;
-                    */
+        int m = matrix.size(), n = matrix[0].size();
+        vector<vector<pair<int,int>>> v;
+        v.resize(m);
+        for(int i = 0; i < m; i++) {
+            vector<pair<int,int>>& vm = matrix[i];
+            vm.resize(n);
+            for(int j = 0; j < n; j++) {
+                if (matrix[i][j] == '1') {
+                    pair<int,int> left, up;
+                    if (j > 0) left = vm[j-1];
+                    if (i > 0) up = v[i-1][j];
+                    vm[j].first = max(left.first + 1, up.first);
+                    vm[j].second = max(left.second, up.second + 1);
                 }
             }
         }
+        return v[m-1][n-1];
     }
 };
