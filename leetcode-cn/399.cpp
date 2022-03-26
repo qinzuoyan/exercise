@@ -1,6 +1,7 @@
 #include <vector>
 #include <map>
 #include <set>
+#include <string>
 using namespace std;
 
 class UnionFindSet {
