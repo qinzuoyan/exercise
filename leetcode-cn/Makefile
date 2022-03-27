@@ -6,13 +6,13 @@ SRCS=$(wildcard *.cpp)
 OBJS=$(SRCS:.cpp=.o )
 
 all: $(OBJS)
-	$(CXX) $^ -o all.o
+	$(CXX) $^ -o $@
 
 %.o: %.cpp
 	$(CXX) $^ $(CXX_INC) $(CXX_FLAGS) -c -o $@
 
-test: test.o $(SRCS)
-	$(CXX) test.o -o $@
+test: test.cpp $(SRCS)
+	$(CXX) test.cpp $(CXX_INC) $(CXX_FLAGS) -o $@
 
 clean:
 	-rm -f *.o *.a test all

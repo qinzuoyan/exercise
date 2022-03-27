@@ -2,14 +2,19 @@
 #include <stdio.h>
 #include <iostream>
 #include <queue>
-#include "621.cpp"
+#include "30.cpp"
 using namespace std;
 
 int main()
 {
+    string str = "lingmindraboofooowingdingbarrwingmonkeypoundcake";
+    vector<string> v = {"fooo","barr","wing","ding","wing"};
     Solution s;
-    vector<char> tasks = {'A','A','A','B','B','C'};
-    cout << s.leastInterval(tasks, 2) << endl;
+    vector<int> r = s.findSubstring(str, v);
+    for (int i : r) {
+        cout << i << ",";
+    }
+    cout << endl;
 	return 0;
 }
 
