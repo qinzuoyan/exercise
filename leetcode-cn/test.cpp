@@ -2,19 +2,15 @@
 #include <stdio.h>
 #include <iostream>
 #include <queue>
-#include "30.cpp"
+#include "122.cpp"
 using namespace std;
 
 int main()
 {
-    string str = "lingmindraboofooowingdingbarrwingmonkeypoundcake";
-    vector<string> v = {"fooo","barr","wing","ding","wing"};
+    //vector<int> v = {7,1,5,3,6,4};
+    vector<int> v = {7,6,4,3,1};
     Solution s;
-    vector<int> r = s.findSubstring(str, v);
-    for (int i : r) {
-        cout << i << ",";
-    }
-    cout << endl;
+    cout << s.maxProfit(v) << endl;
 	return 0;
 }
 
