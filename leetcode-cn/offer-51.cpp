@@ -38,6 +38,8 @@ public:
 
 class Solution {
 public:
+    // sparse binary index tree
+    // O(nlog(n))
     int reversePairs(vector<int>& nums) {
         vector<int> sorted(nums);
         sort(sorted.begin(), sorted.end());

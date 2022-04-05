@@ -554,6 +554,8 @@ private:
 
 class Solution {
 public:
+    // balanced binary search tree
+    // O(nlog(n))
     int reversePairs(vector<int>& nums) {
         int n = nums.size(), r = 0;
         BalancedBST tr(true);
