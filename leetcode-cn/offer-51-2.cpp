@@ -9,8 +9,8 @@ class BalancedBST {
     struct Node
     {
         int   item;      // Information at this node
-        int   ht;        // height of this node
-        int   sz;        // item count of this tree
+        int   ht;        // Height of this node
+        int   sz;        // Item count of this tree
         Node* left;      // The left subtree
         Node* right;     // The right subtree
 

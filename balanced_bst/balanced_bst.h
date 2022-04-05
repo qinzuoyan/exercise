@@ -10,8 +10,8 @@ class BalancedBST {
     struct Node
     {
         int   item;      // Information at this node
-        int   ht;        // height of this node
-        int   sz;        // item count of this tree
+        int   ht;        // Height of this node
+        int   sz;        // Item count of this tree
         Node* left;      // The left subtree
         Node* right;     // The right subtree
 
@@ -39,6 +39,25 @@ public:
     }
 
     //=================================================
+    //                at
+    //=================================================
+    // Returns the item at position n in the tree.
+    // If n is not in range [0, size), returns 0.
+    //=================================================
+
+    int at(int n) const
+    {
+        if (n < 0 || n >= size())
+        {
+            return 0;
+        }
+        else
+        {
+            return at(n, _t);
+        }
+    }
+
+    //=================================================
     //                lessThan
     //=================================================
     // Returns item count less than n in the tree.
@@ -58,25 +77,6 @@ public:
     int noMoreThan(int n) const
     {
         return lessThan(n + 1, _t);
-    }
-
-    //=================================================
-    //                at
-    //=================================================
-    // Returns the item at position n in the tree.
-    // If n is not in range [0, size), returns 0.
-    //=================================================
-
-    int at(int n) const
-    {
-        if (n < 0 || n >= size())
-        {
-            return 0;
-        }
-        else
-        {
-            return at(n, _t);
-        }
     }
 
     //=================================================
