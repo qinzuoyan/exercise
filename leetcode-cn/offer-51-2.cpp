@@ -1,8 +1,7 @@
-#ifndef __BALANCED_BST_H_
-#define __BALANCED_BST_H_
-
 #include <cstdlib>
 #include <algorithm>
+#include <vector>
+using namespace std;
 
 class BalancedBST {
     struct Node;
@@ -213,7 +212,7 @@ private:
     // Requirements: If T is nonempty, the the n
     // is in range of [0, size(T)-1].
     //=================================================
-
+    
     int at(int n, const Tree T) const
     {
         if(T == NULL)
@@ -452,7 +451,7 @@ private:
     //              rotateLeft
     //==========================================
     // rotateLeft(T) performs a rotation
-    // from right to left at the root of T,
+    // from right to left at the root of T, 
     // choosing a single or double rotation.
     //==========================================
 
@@ -476,7 +475,7 @@ private:
     //              rotateRight
     //==========================================
     // rotateRight(T) performs a rotation
-    // from left to right at the root of T,
+    // from left to right at the root of T, 
     // choosing a single or double rotation.
     //==========================================
 
@@ -553,4 +552,15 @@ private:
 
 };
 
-#endif
+class Solution {
+public:
+    int reversePairs(vector<int>& nums) {
+        int n = nums.size(), r = 0;
+        BalancedBST tr(true);
+        for (int i = n - 1; i >= 0; --i) {
+            r += tr.lessThan(nums[i]);
+            tr.insert(nums[i]);
+        }
+        return r;
+    }
+};
