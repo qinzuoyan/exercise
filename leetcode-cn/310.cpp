@@ -1,5 +1,4 @@
 #include <climits>
-#include <map>
 #include <vector>
 using namespace std;
 
@@ -50,7 +49,7 @@ class Solution {
           s.max[1] = pair<int, int>(s.unvisit, h);
         }
         s.stat = kAllVisit;
-        return s.max[0].second;
+        return s.max[0].first != except ? s.max[0].second : s.max[1].second;
       }
     } else {  // kAllVisit
       return s.max[0].first != except ? s.max[0].second : s.max[1].second;
@@ -68,7 +67,6 @@ class Solution {
     vector<int> v;
     for (int i = 0; i < n; i++) {
       int h = findHeightExcept(stats, n2n, i, -1);
-      cout << i << " : " << h << endl;
       if (h == r) {
         v.push_back(i);
       } else if (h < r) {
@@ -77,7 +75,6 @@ class Solution {
         v.push_back(i);
       }
     }
-    cout << "h = " << r << endl;
     return v;
   }
 };

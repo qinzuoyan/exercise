@@ -62,7 +62,6 @@ class Solution {
         s.insert(t[t.size() / 2]);
         s.insert(t[t.size() / 2 - 1]);
       }
-      cout << "h = " << t.size() << endl;
     }
     vector<int> r;
     r.insert(r.end(), s.begin(), s.end());
