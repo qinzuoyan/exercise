@@ -1,5 +1,6 @@
 #include <cstring>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 bool compare406(const vector<int>& a, const vector<int>& b) {
