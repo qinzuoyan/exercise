@@ -6,13 +6,9 @@
 #include <fstream>
 #include <queue>
 using namespace std;
-#include "420.cpp"
 
 int main() {
-  Solution s;
-  string str;
-  getline(cin, str);
-  s.strongPasswordChecker(str);
+  //Solution s;
   return 0;
 }
 
