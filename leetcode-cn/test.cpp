@@ -6,9 +6,13 @@
 #include <fstream>
 #include <queue>
 using namespace std;
+#include "479.cpp"
 
 int main() {
-  // Solution s;
+  Solution s;
+  int i;
+  cin >> i;
+  cout << s.largestPalindrome(i) << endl;
   return 0;
 }
 
