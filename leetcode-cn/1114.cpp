@@ -4,14 +4,14 @@
 using namespace std;
 
 class Foo {
-private:
+ private:
   mutex _mtx;
   condition_variable _cv2;
   condition_variable _cv3;
   bool _ready2;
   bool _ready3;
 
-public:
+ public:
   Foo() : _ready2(false), _ready3(false) {}
 
   void first(function<void()> printFirst) {

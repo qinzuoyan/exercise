@@ -1,17 +1,17 @@
 #include <string>
-#include <vector>
 #include <unordered_set>
+#include <vector>
 using namespace std;
 
 class Solution {
-public:
+ public:
   int uniqueMorseRepresentations(vector<string> &words) {
     const char *a[] = {".-",   "-...", "-.-.", "-..",  ".",    "..-.", "--.",
                        "....", "..",   ".---", "-.-",  ".-..", "--",   "-.",
                        "---",  ".--.", "--.-", ".-.",  "...",  "-",    "..-",
                        "...-", ".--",  "-..-", "-.--", "--.."};
     unordered_set<string> s;
-    for (auto& w : words) {
+    for (auto &w : words) {
       string t;
       for (char c : w) {
         t += a[c - 'a'];

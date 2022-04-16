@@ -1,12 +1,12 @@
 #include <cstring>
-#include <vector>
 #include <set>
+#include <vector>
 using namespace std;
 
 class Solution {
  public:
   void findLongestNodes(int n, vector<vector<int>>& n2n, int start,
-                               vector<int>& ends, vector<int>& path) {
+                        vector<int>& ends, vector<int>& path) {
     int a[n];
     memset(a, 0, sizeof(a));
     a[start] = 1;
@@ -29,8 +29,7 @@ class Solution {
       }
       if (t.empty()) {
         break;
-      }
-      else {
+      } else {
         r.swap(t);
       }
     }
@@ -57,8 +56,7 @@ class Solution {
       } while (j != path[j]);
       if (t.size() & 1) {
         s.insert(t[t.size() / 2]);
-      }
-      else {
+      } else {
         s.insert(t[t.size() / 2]);
         s.insert(t[t.size() / 2 - 1]);
       }

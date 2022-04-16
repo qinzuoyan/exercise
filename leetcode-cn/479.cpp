@@ -1,9 +1,11 @@
 #include <cstdio>
-#include <set>
 #include <queue>
-#include <vector>
+#include <set>
 #include <utility>
+#include <vector>
 using namespace std;
+
+// timeout
 
 struct N {
   int x;
@@ -25,7 +27,8 @@ bool compare479(const N& a, const N& b) {
 
 class Solution {
   int match_count = 0;
-public:
+
+ public:
   bool match(long long n) {
     match_count++;
     char a[20];
@@ -45,23 +48,22 @@ public:
     }
     m -= 1;
     long long v = (long long)m * m;
-    if (match(v))
-      return v % 1337;
-    //priority_queue<N, vector<N>, compare479> q;
+    if (match(v)) return v % 1337;
     priority_queue<N> q;
-    set<pair<int,int>> s;
+    set<pair<int, int>> s;
     q.emplace(m, m, v);
     s.emplace(m, m);
     long long max = 0;
     while (q.size() && q.top().v > max) {
       int x = q.top().x, y = q.top().y;
+      // cout << "pop: " << x << "," << y << "," << q.top().v << endl;
       q.pop();
       v = (long long)(x - 1) * y;
       if (v > max) {
         auto pr = s.emplace(x - 1, y);
         if (pr.second) {
           if (match(v)) {
-            cout << v << " : " << x-1 << "," << y << endl;
+            // cout << v << " : " << x-1 << "," << y << endl;
             max = v;
           }
           q.emplace(x - 1, y, v);
@@ -72,7 +74,7 @@ public:
         auto pr = s.emplace(x, y - 1);
         if (pr.second) {
           if (match(v)) {
-            cout << v << " : " << x << "," << y-1 << endl;
+            // cout << v << " : " << x << "," << y-1 << endl;
             max = v;
           }
           q.emplace(x, y - 1, v);
@@ -80,10 +82,10 @@ public:
       }
     }
     if (q.size()) {
-      cout << "q.top(): " << q.top().x << "," << q.top().y << endl;
+      // cout << "q.top(): " << q.top().x << "," << q.top().y << endl;
     }
-    cout << "s.size(): " << s.size() << endl;
-    cout << "match_count: " << match_count << endl;
+    // cout << "s.size(): " << s.size() << endl;
+    // cout << "match_count: " << match_count << endl;
     return max;
   }
 };

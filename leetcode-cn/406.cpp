@@ -1,6 +1,6 @@
+#include <algorithm>
 #include <cstring>
 #include <vector>
-#include <algorithm>
 using namespace std;
 
 bool compare406(const vector<int>& a, const vector<int>& b) {
@@ -13,12 +13,12 @@ bool compare406(const vector<int>& a, const vector<int>& b) {
 }
 
 class Solution {
-public:
-  vector<vector<int>> reconstructQueue(vector<vector<int>> &people) {
+ public:
+  vector<vector<int>> reconstructQueue(vector<vector<int>>& people) {
     int n = people.size();
     sort(people.begin(), people.end(), compare406);
     int a[n];
-    memset(a, 0 ,sizeof(a));
+    memset(a, 0, sizeof(a));
     for (int i = 0; i < n; i++) {
       vector<int>& v = people[i];
       int move = i - v[1];

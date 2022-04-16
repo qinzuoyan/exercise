@@ -4,21 +4,20 @@ using namespace std;
 
 // Time out ...
 class Solution {
-public:
+ public:
   const static long long M = 1000000007;
 
   struct N {
     N *parent;
     vector<N *> children_list;
-    int members;    // subtree member count
-    int self_coins; // coins to self
-    int all_coins;  // coins to all subtree
+    int members;     // subtree member count
+    int self_coins;  // coins to self
+    int all_coins;   // coins to all subtree
     N() : parent(nullptr), members(0), self_coins(0), all_coins(0) {}
   };
 
   int collectMembers(N *n) {
-    if (n->members > 0)
-      return n->members;
+    if (n->members > 0) return n->members;
     n->members = 1;
     for (N *c : n->children_list) {
       n->members += collectMembers(c);
@@ -39,11 +38,11 @@ public:
     }
     vector<int> r;
     for (auto &v : operations) {
-      if (v[0] == 1) { // give one
+      if (v[0] == 1) {  // give one
         a[v[1]].self_coins += v[2];
-      } else if (v[0] == 2) { // give all
+      } else if (v[0] == 2) {  // give all
         a[v[1]].all_coins += v[2];
-      } else { // query all
+      } else {  // query all
         N *n = a + v[1];
         N *p = n->parent;
         long long c = 0;

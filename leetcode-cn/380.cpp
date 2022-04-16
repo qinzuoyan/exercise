@@ -1,21 +1,15 @@
-#include <unordered_set>
-#include <ctime>
 #include <cstdlib>
+#include <ctime>
+#include <unordered_set>
 using namespace std;
 
 class RandomizedSet {
  public:
-  RandomizedSet() {
-    srand(time(NULL));
-  }
+  RandomizedSet() { srand(time(NULL)); }
 
-  bool insert(int val) {
-    return _s.insert(val).second;
-  }
+  bool insert(int val) { return _s.insert(val).second; }
 
-  bool remove(int val) {
-    return _s.erase(val) == 1;
-  }
+  bool remove(int val) { return _s.erase(val) == 1; }
 
   int getRandom() {
     int k = rand() % _s.size();

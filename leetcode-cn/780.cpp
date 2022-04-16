@@ -1,5 +1,5 @@
 class Solution {
-public:
+ public:
   bool reachingPoints(int sx, int sy, int tx, int ty) {
     bool changed = true;
     while (changed) {
@@ -9,8 +9,7 @@ public:
           tx = sx + (tx - sx) % ty;
           changed = true;
         }
-      }
-      else if (tx < ty) {
+      } else if (tx < ty) {
         if (ty - sy >= tx) {
           ty = sy + (ty - sy) % tx;
           changed = true;

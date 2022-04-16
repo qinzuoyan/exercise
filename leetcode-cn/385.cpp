@@ -46,17 +46,16 @@ class Solution {
  public:
   void parse(const string& s, int& i, NestedInteger& ni) {
     if (s[i] != '[') {
-      char *endptr;
+      char* endptr;
       ni.setInteger(strtol(s.data() + i, &endptr, 10));
       i = endptr - s.data();
-    } else { // s[i] == '['
+    } else {  // s[i] == '['
       i++;
       while (s[i] != ']') {
         NestedInteger sub;
         parse(s, i, sub);
         ni.add(sub);
-        if (s[i] == ',')
-          i++;
+        if (s[i] == ',') i++;
       }
       i++;
     }

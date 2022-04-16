@@ -8,8 +8,7 @@ class Solution {
       if (i == n - 1) {
         (*r)++;
       }
-    }
-    else {
+    } else {
       for (int j : a[i]) {
         run(n, a, k - 1, j, r);
       }

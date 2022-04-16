@@ -7,16 +7,15 @@ class Solution {
   static const int kNoVisit = -1;
   static const int kAllVisit = -2;
   struct Stat {
-    int stat;               // kNoVisit || kAllVisit || kMostVisit(>=0)
+    int stat;  // kNoVisit || kAllVisit || kMostVisit(>=0)
     int max0, max1;
     int max0n;
     Stat() : stat(kNoVisit), max0(0), max1(0), max0n(0) {}
   };
 
-  int findHeightExcept(Stat* stats, vector<int>* n2n, int root,
-                       int except) {
+  int findHeightExcept(Stat* stats, vector<int>* n2n, int root, int except) {
     Stat& s = stats[root];
-    if (s.stat == kNoVisit) { // kNoVisit
+    if (s.stat == kNoVisit) {  // kNoVisit
       vector<int>& v = n2n[root];
       for (int i : v) {
         if (i != except) {
@@ -25,15 +24,14 @@ class Solution {
             s.max1 = s.max0;
             s.max0 = h;
             s.max0n = i;
-          }
-          else if ( h > s.max1) {
+          } else if (h > s.max1) {
             s.max1 = h;
           }
         }
         s.stat = except >= 0 ? except : kAllVisit;
       }
       return s.max0;
-    } else if (s.stat >= 0) { // kMostVisit
+    } else if (s.stat >= 0) {  // kMostVisit
       if (s.stat == except) {
         return s.max0;
       } else {
@@ -48,7 +46,7 @@ class Solution {
         s.stat = kAllVisit;
         return s.max0n == except ? s.max1 : s.max0;
       }
-    } else { // kAllVisit
+    } else {  // kAllVisit
       return s.max0n == except ? s.max1 : s.max0;
     }
   }

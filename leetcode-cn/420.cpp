@@ -1,13 +1,13 @@
-#include <string>
-#include <map>
 #include <cctype>
+#include <map>
+#include <string>
 using namespace std;
 
 class Solution {
-public:
+ public:
   int strongPasswordChecker(string password) {
     int n = password.size();
-    multimap<int, int> m; // edit : len
+    multimap<int, int> m;  // edit : len
     int len = 0, k = 0, b = 0, i = 0;
     for (; i < n; i++) {
       if (b != 7) {
@@ -18,7 +18,7 @@ public:
         else if (isdigit(password[i]))
           b |= 1;
       }
-      if (i > 0 && password[i] != password[i-1]) {
+      if (i > 0 && password[i] != password[i - 1]) {
         len = i - k;
         if (len >= 3) {
           if (n > 20)
@@ -52,8 +52,7 @@ public:
       if (n > 20) {
         r += n - 20;
       }
-    }
-    else if (n < 6) {
+    } else if (n < 6) {
       // insert
       while (n < 6 && m.size()) {
         len = m.begin()->second;

@@ -25,14 +25,13 @@ class Solution {
     }
     vector<int> r;
     for (auto& v : operations) {
-      if (v[0] == 1) { // give one
+      if (v[0] == 1) {  // give one
         int i = v[1], c = v[2];
         while (i) {
           a[i].coins_sum += c;
           i = a[i].parent;
         }
-      }
-      else if (v[0] == 2) { // give all
+      } else if (v[0] == 2) {  // give all
         int i = v[1], c = v[2];
         int k = a[i].members * c;
         a[i].coins += c;
@@ -40,8 +39,7 @@ class Solution {
           a[i].coins_sum += k;
           i = a[i].parent;
         }
-      }
-      else { // query all
+      } else {  // query all
         int i = v[1];
         long long c = a[i].coins_sum, m = a[i].members;
         i = a[i].parent;

@@ -3,11 +3,10 @@ using namespace std;
 
 class Solution {
  public:
-  pair<int,int> fraction(const vector<int> &cont, size_t i) {
+  pair<int, int> fraction(const vector<int> &cont, size_t i) {
     if (i == cont.size() - 1) {
       return pair<int, int>(cont[i], 1);
-    }
-    else {
+    } else {
       pair<int, int> r = fraction(cont, i + 1);
       return pair<int, int>(cont[i] * r.first + r.second, r.first);
     }
