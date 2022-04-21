@@ -1,4 +1,7 @@
 #include <vector>
+#include <cstring>
+#include <cstdlib>
+#include <cstdio>
 using namespace std;
 
 class Solution {
