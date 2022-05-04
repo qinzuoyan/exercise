@@ -4,7 +4,7 @@ class Solution {
     int a[n], h = 0, s = 0;
     for (int i = 0; i < n; ++i) a[i] = i + 1;
     while (n > 1) {
-      int s = (k + s - 1) % n;
+      s = (k + s - 1) % n;
       if (s == 0) {
         h = a[h];
       } else if (s == n - 1) {
