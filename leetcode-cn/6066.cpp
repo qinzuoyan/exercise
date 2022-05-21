@@ -6,7 +6,7 @@ class CountIntervals {
   int c;
 
   // return sweeped count and new right
-  int sweep(map<int, int>::iterator it, int left, int* right) {
+  int sweep(map<int, int>::iterator it, int* right) {
     auto it0 = it;
     int r = 0;
     while (it != m.end() && it->first <= *right) {
@@ -32,7 +32,7 @@ class CountIntervals {
     auto it = m.upper_bound(left);
     if (it == m.begin()) {
       if (it->first <= right) {
-        c -= sweep(it, left, &right);
+        c -= sweep(it, &right);
       }
       c += right - left + 1;
       m[left] = right;
@@ -41,13 +41,13 @@ class CountIntervals {
       if (it->second >= left) {
         left = it->first;
         right = max(right, it->second);
-        c -= sweep(it, left, &right);
+        c -= sweep(it, &right);
         c += right - left + 1;
         m[left] = right;
       } else {  // it->second < left
         ++it;
         if (it != m.end() && it->first <= right) {
-          c -= sweep(it, left, &right);
+          c -= sweep(it, &right);
         }
         c += right - left + 1;
         m[left] = right;
