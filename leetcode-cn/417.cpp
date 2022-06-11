@@ -6,7 +6,7 @@ class Solution {
   const int Pacific = 0x1;
   const int Atlantic = 0x2;
   const int PacificAtlantic = 0x3;
-  void travel(vector<vector<int>>& h, vector<vector<int>>& a, int m, int n,
+  void travel(vector<vector<int>> &h, vector<vector<int>> &a, int m, int n,
               int i, int j, int prev, int flag) {
     int v = h[i][j];
     if ((v < prev) || (a[i][j] & flag)) return;
@@ -16,7 +16,7 @@ class Solution {
     if (j < n - 1) travel(h, a, m, n, i, j + 1, v, flag);
     if (i < m - 1) travel(h, a, m, n, i + 1, j, v, flag);
   }
-  vector<vector<int>> pacificAtlantic(vector<vector<int>>& heights) {
+  vector<vector<int>> pacificAtlantic(vector<vector<int>> &heights) {
     int m = heights.size(), n = heights[0].size();
     vector<vector<int>> a(m, vector<int>(n));
     for (int i = 0; i < m; ++i) {
@@ -30,8 +30,7 @@ class Solution {
     vector<vector<int>> r;
     for (int i = 0; i < m; ++i) {
       for (int j = 0; j < n; ++j) {
-        if (a[i][j] == PacificAtlantic)
-          r.push_back({i, j});
+        if (a[i][j] == PacificAtlantic) r.push_back({i, j});
       }
     }
     return r;

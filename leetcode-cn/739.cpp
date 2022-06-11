@@ -5,7 +5,7 @@ using namespace std;
 class Solution {
  public:
   // O(m*n)
-  vector<int> dailyTemperatures(vector<int>& temperatures) {
+  vector<int> dailyTemperatures(vector<int> &temperatures) {
     int a[101], n = temperatures.size();
     memset(a, -1, sizeof(a));
     vector<int> r(n);

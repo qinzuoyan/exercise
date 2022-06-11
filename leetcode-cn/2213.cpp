@@ -14,7 +14,7 @@ class NumTree {
   };
 
  public:
-  NumTree(const string& s) : _s(s) {
+  NumTree(const string &s) : _s(s) {
     _n = s.size();
     _a = new Node[_n * 4];
     construct(0, _n - 1, 1);
@@ -30,8 +30,8 @@ class NumTree {
   }
 
  private:
-  Node* construct(int l, int r, int pos) {
-    Node* n = &_a[pos];
+  Node *construct(int l, int r, int pos) {
+    Node *n = &_a[pos];
     if (l == r) {
       n->lc = n->rc = _s[l];
       n->ln = n->rn = 1;
@@ -40,13 +40,13 @@ class NumTree {
       return n;
     }
     int m = (l + r) / 2;
-    Node* lnode = construct(l, m, pos << 1);
-    Node* rnode = construct(m + 1, r, pos << 1 | 1);
+    Node *lnode = construct(l, m, pos << 1);
+    Node *rnode = construct(m + 1, r, pos << 1 | 1);
     return compute(n, lnode, rnode);
   }
 
-  Node* update(int l, int r, int pos, int i, char c) {
-    Node* n = &_a[pos];
+  Node *update(int l, int r, int pos, int i, char c) {
+    Node *n = &_a[pos];
     if (l == r) {
       assert(l == i);
       _s[l] = c;
@@ -54,13 +54,13 @@ class NumTree {
       return n;
     }
     int m = (l + r) / 2;
-    Node* lnode = (i <= m ? update(l, m, pos << 1, i, c) : &_a[pos << 1]);
-    Node* rnode =
+    Node *lnode = (i <= m ? update(l, m, pos << 1, i, c) : &_a[pos << 1]);
+    Node *rnode =
         (i > m ? update(m + 1, r, pos << 1 | 1, i, c) : &_a[pos << 1 | 1]);
     return compute(n, lnode, rnode);
   }
 
-  Node* compute(Node* n, Node* lnode, Node* rnode) {
+  Node *compute(Node *n, Node *lnode, Node *rnode) {
     n->range = lnode->range + rnode->range;
     n->lc = lnode->lc;
     n->ln = lnode->ln;
@@ -79,7 +79,7 @@ class NumTree {
     return n;
   }
 
-  Node* _a;
+  Node *_a;
   int _n;
   string _s;
 };
@@ -87,7 +87,7 @@ class NumTree {
 class Solution {
  public:
   vector<int> longestRepeating(string s, string queryCharacters,
-                               vector<int>& queryIndices) {
+                               vector<int> &queryIndices) {
     NumTree t(s);
     vector<int> r(queryCharacters.size());
     for (size_t i = 0; i < queryCharacters.size(); i++) {

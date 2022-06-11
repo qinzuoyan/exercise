@@ -1,17 +1,15 @@
-#include <string>
-#include <cstring>
 #include <cctype>
+#include <cstring>
 #include <iostream>
+#include <string>
 using namespace std;
 
-
 //////////////////////////////////////////
-// error in case: "<A><A>456</A>  <A> 123  !!  <![CDATA[]]>  123 </A>   <A>123</A></A>"
+// error in case: "<A><A>456</A>  <A> 123  !!  <![CDATA[]]>  123 </A>
+// <A>123</A></A>"
 //      expected: true
 //          real: false
 //////////////////////////////////////////
-
-
 
 #define BEGIN_CHECK(name)                                               \
   char *end = str + len, end_back = str[len];                           \
@@ -109,4 +107,3 @@ class Solution {
 
 bool Solution::print = false;
 int Solution::depth = 0;
-

@@ -1,5 +1,5 @@
-#include <vector>
 #include <stack>
+#include <vector>
 using namespace std;
 
 /**
@@ -7,19 +7,19 @@ using namespace std;
  */
 struct TreeNode {
   int val;
-  TreeNode* left;
-  TreeNode* right;
+  TreeNode *left;
+  TreeNode *right;
   TreeNode() : val(0), left(nullptr), right(nullptr) {}
   TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-  TreeNode(int x, TreeNode* left, TreeNode* right)
+  TreeNode(int x, TreeNode *left, TreeNode *right)
       : val(x), left(left), right(right) {}
 };
 
 class TreeTraveler {
-  stack<TreeNode*> s;
+  stack<TreeNode *> s;
 
  public:
-  TreeTraveler(TreeNode* root) {
+  TreeTraveler(TreeNode *root) {
     while (root) {
       s.push(root);
       root = root->left;
@@ -29,7 +29,7 @@ class TreeTraveler {
   bool hasNext() { return !s.empty(); }
   int getNext() { return s.top()->val; }
   void popNext() {
-    TreeNode* n = s.top()->right;
+    TreeNode *n = s.top()->right;
     s.pop();
     while (n) {
       s.push(n);
@@ -40,7 +40,7 @@ class TreeTraveler {
 
 class Solution {
  public:
-  vector<int> getAllElements(TreeNode* root1, TreeNode* root2) {
+  vector<int> getAllElements(TreeNode *root1, TreeNode *root2) {
     vector<int> v;
     TreeTraveler tr1(root1), tr2(root2);
     while (tr1.hasNext() && tr2.hasNext()) {

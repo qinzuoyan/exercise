@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
  public:
-  long long subArrayRanges(vector<int>& nums) {
+  long long subArrayRanges(vector<int> &nums) {
     size_t n = nums.size();
     long long r = 0;
     for (size_t i = 0; i < n - 1; i++) {

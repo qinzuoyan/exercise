@@ -1,11 +1,11 @@
-#include <vector>
-#include <string>
 #include <map>
+#include <string>
+#include <vector>
 using namespace std;
 
 class Solution {
  public:
-  int countDistinct(vector<int>& nums, int k, int p) {
+  int countDistinct(vector<int> &nums, int k, int p) {
     int n = nums.size(), s = 0, c = 0, r = 0;
     map<pair<int, int>, vector<int>> m[201];
     for (int i = 0; i < n; ++i) {
@@ -22,7 +22,7 @@ class Solution {
           s2 += p * nums[x];
           ++p;
         }
-        auto& v = m[len][pair<int, int>(s1, s2)];
+        auto &v = m[len][pair<int, int>(s1, s2)];
         bool exist = false;
         if (v.size()) {
           for (int x : v) {

@@ -12,8 +12,8 @@ class Solution {
     return r;
   }
 
-  bool partition(vector<vector<string>>& r, vector<string>& v, vector<int>& a,
-                 const char* s, const char* p) {
+  bool partition(vector<vector<string>> &r, vector<string> &v, vector<int> &a,
+                 const char *s, const char *p) {
     if (!*p) {
       r.push_back(v);
       return true;
@@ -21,7 +21,7 @@ class Solution {
     if (a[p - s] == -1) {
       return false;
     }
-    const char* q = p;
+    const char *q = p;
     while (*q) {
       const char *i = p, *j = q;
       while (i < j && *i == *j) {

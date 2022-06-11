@@ -1,7 +1,7 @@
-#include <string>
-#include <cstring>
 #include <cctype>
+#include <cstring>
 #include <stack>
+#include <string>
 using namespace std;
 
 class Solution {

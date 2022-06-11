@@ -5,7 +5,7 @@ using namespace std;
 class Solution {
  public:
   // O(n)
-  vector<int> maxSlidingWindow(vector<int>& nums, int k) {
+  vector<int> maxSlidingWindow(vector<int> &nums, int k) {
     vector<int> r;
     deque<int> q;
     int n = nums.size();

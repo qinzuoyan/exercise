@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
  public:
-  int search(vector<int>& nums, int target, int i, int j) {
+  int search(vector<int> &nums, int target, int i, int j) {
     if (i == j) {
       return nums[i] == target ? i : -1;
     }
@@ -24,7 +24,7 @@ class Solution {
     }
   }
 
-  int search(vector<int>& nums, int target) {
+  int search(vector<int> &nums, int target) {
     return search(nums, target, 0, nums.size() - 1);
   }
 };

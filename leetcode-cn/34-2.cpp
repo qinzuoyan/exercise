@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
  public:
-  pair<int, int> searchRange(vector<int>& nums, int start, int end,
+  pair<int, int> searchRange(vector<int> &nums, int start, int end,
                              int target) {
     if (nums[start] > target || nums[end] < target) return make_pair(-1, -1);
     if (nums[start] == target && nums[end] == target)
@@ -20,7 +20,7 @@ class Solution {
       return make_pair(left.first, right.second);
   }
 
-  vector<int> searchRange(vector<int>& nums, int target) {
+  vector<int> searchRange(vector<int> &nums, int target) {
     vector<int> r({-1, -1});
     if (nums.empty()) return r;
     pair<int, int> ret = searchRange(nums, 0, nums.size() - 1, target);

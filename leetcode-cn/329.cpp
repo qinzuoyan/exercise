@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
  public:
-  int search(vector<vector<int>>& matrix, vector<vector<int>>& longest,
+  int search(vector<vector<int>> &matrix, vector<vector<int>> &longest,
              size_t i, size_t j) {
     if (longest[i][j] > 0) return longest[i][j];
     int m = 0, c = matrix[i][j];
@@ -21,7 +21,7 @@ class Solution {
     return longest[i][j];
   }
 
-  int longestIncreasingPath(vector<vector<int>>& matrix) {
+  int longestIncreasingPath(vector<vector<int>> &matrix) {
     size_t m = matrix.size();
     size_t n = matrix[0].size();
     int max = 0;

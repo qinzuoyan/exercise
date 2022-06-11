@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
  public:
-  void setZeroes(vector<vector<int>>& matrix) {
+  void setZeroes(vector<vector<int>> &matrix) {
     int m = matrix.size(), n = matrix[0].size();
     int a[m], b[n];
     memset(a, 0, sizeof(int) * m);

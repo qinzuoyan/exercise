@@ -4,7 +4,7 @@ using namespace std;
 class Solution {
  public:
   // O(min(mlog(n),nlog(m))) : 96ms
-  bool searchMatrix(vector<vector<int>>& matrix, int target) {
+  bool searchMatrix(vector<vector<int>> &matrix, int target) {
     int m = matrix.size(), n = matrix[0].size();
     bool by_row = (n >= m);
     int s = (by_row ? m : n);

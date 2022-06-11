@@ -1,18 +1,18 @@
 #include <climits>
-#include <vector>
 #include <string>
+#include <vector>
 using namespace std;
 
 class Solution {
  public:
   static const int LEN = 8;
-  bool isChangeable(const string& x, const string& y) {
+  bool isChangeable(const string &x, const string &y) {
     int d = 0;
     for (int i = 0; i < LEN && d <= 1; ++i)
       if (x[i] != y[i]) ++d;
     return d <= 1;
   }
-  int minMutation(string start, string end, vector<string>& bank) {
+  int minMutation(string start, string end, vector<string> &bank) {
     int start_pos = -1, end_pos = -1, n = bank.size();
     for (int i = 0; i < n && (start_pos == -1 || end_pos == -1); ++i) {
       if (bank[i] == start)

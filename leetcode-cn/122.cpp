@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
  public:
-  int maxProfit(vector<int>& prices) {
+  int maxProfit(vector<int> &prices) {
     int n = prices.size();
     int a[n][3];
     memset(a, 0, sizeof(n * 3));

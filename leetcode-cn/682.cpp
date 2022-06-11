@@ -6,9 +6,9 @@ using namespace std;
 
 class Solution {
  public:
-  int calPoints(vector<string>& ops) {
+  int calPoints(vector<string> &ops) {
     stack<int> s;
-    for (auto& str : ops) {
+    for (auto &str : ops) {
       int c = 0;
       if (str == "+") {
         int p1 = s.top();

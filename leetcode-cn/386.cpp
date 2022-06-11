@@ -1,28 +1,25 @@
-#include <vector>
-#include <cstring>
-#include <cstdlib>
 #include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <vector>
 using namespace std;
 
 class Solution {
  public:
-  void run(char *a, char *b, int m, int i, vector<int>& r) {
-    if (i >= m)
-      return;
+  void run(char *a, char *b, int m, int i, vector<int> &r) {
+    if (i >= m) return;
     char end = '9';
     if (i == m - 1) {
       int c = strncmp(a, b, i);
-      if (c > 0)
-        return;
-      if (c == 0)
-        end = b[i];
+      if (c > 0) return;
+      if (c == 0) end = b[i];
     }
     char begin = (i == 0 ? '1' : '0');
     for (char c = begin; c <= end; c++) {
       a[i] = c;
-      a[i+1] = '\0';
+      a[i + 1] = '\0';
       r.push_back(atoi(a));
-      run(a, b, m, i+1, r);
+      run(a, b, m, i + 1, r);
     }
   }
   vector<int> lexicalOrder(int n) {

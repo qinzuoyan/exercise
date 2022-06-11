@@ -1,5 +1,5 @@
-#include <vector>
 #include <stack>
+#include <vector>
 using namespace std;
 
 /**
@@ -7,17 +7,17 @@ using namespace std;
  */
 struct TreeNode {
   int val;
-  TreeNode* left;
-  TreeNode* right;
+  TreeNode *left;
+  TreeNode *right;
   TreeNode() : val(0), left(nullptr), right(nullptr) {}
   TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-  TreeNode(int x, TreeNode* left, TreeNode* right)
+  TreeNode(int x, TreeNode *left, TreeNode *right)
       : val(x), left(left), right(right) {}
 };
 
 class TreeForwardIterator {
-  stack<TreeNode*> s;
-  TreeForwardIterator(TreeNode* n) {
+  stack<TreeNode *> s;
+  TreeForwardIterator(TreeNode *n) {
     while (n) {
       s.push(n);
       n = n->left;
@@ -28,10 +28,10 @@ class TreeForwardIterator {
  public:
   TreeForwardIterator() {}
   ~TreeForwardIterator() {}
-  int& operator*() { return s.top()->val; }
-  int* operator->() { return &(s.top()->val); }
-  TreeForwardIterator& operator++() {
-    TreeNode* n = s.top()->right;
+  int &operator*() { return s.top()->val; }
+  int *operator->() { return &(s.top()->val); }
+  TreeForwardIterator &operator++() {
+    TreeNode *n = s.top()->right;
     s.pop();
     while (n) {
       s.push(n);
@@ -44,19 +44,21 @@ class TreeForwardIterator {
     ++(*this);
     return t;
   }
-  friend bool operator==(const TreeForwardIterator& x, const TreeForwardIterator& y) {
+  friend bool operator==(const TreeForwardIterator &x,
+                         const TreeForwardIterator &y) {
     return x.s.size() == y.s.size() && (x.s.empty() || x.s.top() == y.s.top());
   }
-  friend bool operator!=(const TreeForwardIterator& x, const TreeForwardIterator& y) {
+  friend bool operator!=(const TreeForwardIterator &x,
+                         const TreeForwardIterator &y) {
     return !(x == y);
   }
 };
 
 class TreeTraveler {
-  TreeNode* root_;
+  TreeNode *root_;
 
  public:
-  TreeTraveler(TreeNode* root) : root_(root) {}
+  TreeTraveler(TreeNode *root) : root_(root) {}
   ~TreeTraveler() {}
   TreeForwardIterator begin() { return TreeForwardIterator(root_); }
   TreeForwardIterator end() { return TreeForwardIterator(); }
@@ -64,7 +66,7 @@ class TreeTraveler {
 
 class Solution {
  public:
-  vector<int> getAllElements(TreeNode* root1, TreeNode* root2) {
+  vector<int> getAllElements(TreeNode *root1, TreeNode *root2) {
     vector<int> v;
     TreeTraveler tr1(root1), tr2(root2);
     auto it1 = tr1.begin(), it2 = tr2.begin();
@@ -72,8 +74,7 @@ class Solution {
       if (*it1 <= *it2) {
         v.push_back(*it1);
         ++it1;
-      }
-      else {
+      } else {
         v.push_back(*it2);
         ++it2;
       }

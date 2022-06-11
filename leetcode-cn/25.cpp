@@ -3,19 +3,19 @@
  */
 struct ListNode {
   int val;
-  ListNode* next;
+  ListNode *next;
   ListNode() : val(0), next(nullptr) {}
   ListNode(int x) : val(x), next(nullptr) {}
-  ListNode(int x, ListNode* next) : val(x), next(next) {}
+  ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
 class Solution {
  public:
-  ListNode* reverseList(ListNode* head) {
-    ListNode* p = head;
+  ListNode *reverseList(ListNode *head) {
+    ListNode *p = head;
     head = nullptr;
     while (p) {
-      ListNode* q = p->next;
+      ListNode *q = p->next;
       p->next = head;
       head = p;
       p = q;
@@ -23,7 +23,7 @@ class Solution {
     return head;
   }
 
-  ListNode* reverseKGroup(ListNode* head, int k) {
+  ListNode *reverseKGroup(ListNode *head, int k) {
     if (head == nullptr || head->next == nullptr || k == 1) {
       return head;
     }

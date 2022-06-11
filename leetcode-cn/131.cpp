@@ -11,11 +11,11 @@ class Solution {
     return r;
   }
 
-  void partition(vector<vector<string>>& r, vector<string>& v, const char* p) {
+  void partition(vector<vector<string>> &r, vector<string> &v, const char *p) {
     if (!*p) {
       r.push_back(v);
     }
-    const char* q = p;
+    const char *q = p;
     while (*q) {
       const char *i = p, *j = q;
       while (i < j && *i == *j) {

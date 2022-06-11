@@ -72,7 +72,7 @@ class Solution {
       }
     }
     // modify
-    for (auto& pr : m) {
+    for (auto &pr : m) {
       int e = pr.second / 3;
       an += e;
       r += e;

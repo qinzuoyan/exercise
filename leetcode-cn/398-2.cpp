@@ -1,13 +1,13 @@
-#include <vector>
 #include <algorithm>
+#include <climits>
 #include <cstdlib>
 #include <ctime>
-#include <climits>
+#include <vector>
 using namespace std;
 
 class Solution {
  public:
-  Solution(vector<int>& nums) {
+  Solution(vector<int> &nums) {
     int n = nums.size();
     v.resize(n);
     for (int i = 0; i < n; i++) {
@@ -19,8 +19,7 @@ class Solution {
     for (int i = 1; i < n; i++) {
       if (v[i].first == v[p].first) {
         v[p].second -= 30000;
-      }
-      else {
+      } else {
         p = i;
         v[p].second = -v[p].second - 30000;
       }
@@ -31,12 +30,12 @@ class Solution {
   int pick(int target) {
     pair<int, int> pr(target, INT_MIN);
     auto it = lower_bound(v.begin(), v.end(), pr);
-    int len = (- it->second) / 30000;
+    int len = (-it->second) / 30000;
     if (len == 1) {
-      return (- it->second) % 30000;
+      return (-it->second) % 30000;
     } else {
       int i = rand() % len;
-      return i == 0 ? (- it->second) % 30000 : (it + i)->second;
+      return i == 0 ? (-it->second) % 30000 : (it + i)->second;
     }
   }
 

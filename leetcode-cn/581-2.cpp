@@ -5,7 +5,7 @@ using namespace std;
 class Solution {
  public:
   // O(n)
-  int findUnsortedSubarray(vector<int>& nums) {
+  int findUnsortedSubarray(vector<int> &nums) {
     int n = nums.size();
     int i = 0, k = 1;
     while (k < n && nums[k - 1] <= nums[k]) k++;

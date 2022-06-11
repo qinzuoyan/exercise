@@ -30,11 +30,11 @@ class NestedInteger {
 
   // Set this NestedInteger to hold a nested list and adds a nested integer to
   // it.
-  void add(const NestedInteger& ni) { _v.push_back(ni); }
+  void add(const NestedInteger &ni) { _v.push_back(ni); }
 
   // Return the nested list that this NestedInteger holds, if it holds a nested
   // list The result is undefined if this NestedInteger holds a single integer
-  const vector<NestedInteger>& getList() const { return _v; }
+  const vector<NestedInteger> &getList() const { return _v; }
 
  private:
   bool _is_i;
@@ -44,9 +44,9 @@ class NestedInteger {
 
 class Solution {
  public:
-  void parse(const string& s, int& i, NestedInteger& ni) {
+  void parse(const string &s, int &i, NestedInteger &ni) {
     if (s[i] != '[') {
-      char* endptr;
+      char *endptr;
       ni.setInteger(strtol(s.data() + i, &endptr, 10));
       i = endptr - s.data();
     } else {  // s[i] == '['

@@ -6,8 +6,8 @@ using namespace std;
 
 class Solution {
  public:
-  void update_self(vector<vector<int>>& a, int n, int m, int i, int j,
-                   stack<pair<int, int>>& s1, stack<pair<int, int>>& s2) {
+  void update_self(vector<vector<int>> &a, int n, int m, int i, int j,
+                   stack<pair<int, int>> &s1, stack<pair<int, int>> &s2) {
     if (a[i][j] == -1) return;
     int c = 0;
     if (i > 0 && a[i - 1][j] != -1) c++;
@@ -21,8 +21,8 @@ class Solution {
       s2.emplace(i, j);
   }
 
-  void update_neighbor(vector<vector<int>>& a, int n, int m, int i, int j,
-                       stack<pair<int, int>>& s1, stack<pair<int, int>>& s2) {
+  void update_neighbor(vector<vector<int>> &a, int n, int m, int i, int j,
+                       stack<pair<int, int>> &s1, stack<pair<int, int>> &s2) {
     if (i > 0 && a[i - 1][j] != -1) {
       --a[i - 1][j];
       if (a[i - 1][j] == 1)
@@ -53,9 +53,9 @@ class Solution {
     }
   }
 
-  int domino(int n, int m, vector<vector<int>>& broken) {
+  int domino(int n, int m, vector<vector<int>> &broken) {
     vector<vector<int>> a(n, vector<int>(m));
-    for (auto& v : broken) {
+    for (auto &v : broken) {
       a[v[0]][v[1]] = -1;
     }
     stack<pair<int, int>> s1, s2;

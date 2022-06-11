@@ -4,8 +4,8 @@ using namespace std;
 class Solution {
  public:
   // O(n)
-  vector<vector<int>> insert(vector<vector<int>>& intervals,
-                             vector<int>& newInterval) {
+  vector<vector<int>> insert(vector<vector<int>> &intervals,
+                             vector<int> &newInterval) {
     vector<vector<int>> r;
     int i = 0, n = intervals.size();
     while (i < n && intervals[i][1] < newInterval[0]) i++;

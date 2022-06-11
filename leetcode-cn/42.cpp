@@ -5,7 +5,7 @@ using namespace std;
 class Solution {
  public:
   // O(nlog(n))
-  int trap(vector<int>& height) {
+  int trap(vector<int> &height) {
     int n = height.size();
     priority_queue<pair<int, int>> q;
     for (int i = 0; i < n; i++) {

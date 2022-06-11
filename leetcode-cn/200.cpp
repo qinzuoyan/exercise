@@ -45,7 +45,7 @@ class UnionFindSet {
 
 class Solution {
  public:
-  int numIslands(vector<vector<char>>& grid) {
+  int numIslands(vector<vector<char>> &grid) {
     int m = grid.size(), n = grid[0].size();
     UnionFindSet a;
     vector<vector<int>> v(m);

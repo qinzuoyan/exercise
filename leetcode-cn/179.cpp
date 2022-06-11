@@ -3,9 +3,9 @@
 #include <vector>
 using namespace std;
 
-bool comp(const string& a, const string& b) {
-  const char* x = a.data();
-  const char* y = b.data();
+bool comp(const string &a, const string &b) {
+  const char *x = a.data();
+  const char *y = b.data();
   while (*x || *y) {
     if (!*x) {
       x = a.data();
@@ -26,7 +26,7 @@ bool comp(const string& a, const string& b) {
 
 class Solution {
  public:
-  string largestNumber(vector<int>& nums) {
+  string largestNumber(vector<int> &nums) {
     vector<string> v;
     char buf[20];
     for (int n : nums) {

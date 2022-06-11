@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
  public:
-  vector<int> missingRolls(vector<int>& rolls, int mean, int n) {
+  vector<int> missingRolls(vector<int> &rolls, int mean, int n) {
     int sum = mean * (n + rolls.size());
     for (int i : rolls) {
       sum -= i;

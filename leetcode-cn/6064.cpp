@@ -1,10 +1,10 @@
-#include <vector>
 #include <algorithm>
+#include <vector>
 using namespace std;
 
 class Solution {
  public:
-  int maxConsecutive(int bottom, int top, vector<int>& special) {
+  int maxConsecutive(int bottom, int top, vector<int> &special) {
     sort(special.begin(), special.end());
     int max = special[0] - bottom, n = special.size();
     for (int i = 1; i < n; ++i) {

@@ -6,7 +6,7 @@ class CountIntervals {
   int c;
 
   // return sweeped count and new right
-  int sweep(map<int, int>::iterator it, int* right) {
+  int sweep(map<int, int>::iterator it, int *right) {
     auto it0 = it;
     int r = 0;
     while (it != m.end() && it->first <= *right) {

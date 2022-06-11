@@ -1,20 +1,20 @@
 #include <cstring>
+#include <map>
 #include <string>
 #include <vector>
-#include <map>
 using namespace std;
 
 class Encrypter {
   struct TrieNode {
     bool is_word;
-    TrieNode* children[26];
+    TrieNode *children[26];
     TrieNode() : is_word(false) { memset(children, 0, sizeof(children)); }
   };
 
-  TrieNode* buildTrie(const vector<string>& dict) {
-    TrieNode* root = new TrieNode();
-    for (const string& s : dict) {
-      TrieNode* n = root;
+  TrieNode *buildTrie(const vector<string> &dict) {
+    TrieNode *root = new TrieNode();
+    for (const string &s : dict) {
+      TrieNode *n = root;
       for (char c : s) {
         size_t i = c - 'a';
         if (n->children[i] == nullptr) n->children[i] = new TrieNode();
@@ -25,7 +25,7 @@ class Encrypter {
     return root;
   }
 
-  void destroyTrie(TrieNode* trie) {
+  void destroyTrie(TrieNode *trie) {
     if (trie == nullptr) return;
     for (int i = 0; i < 26; ++i) {
       if (trie->children[i]) destroyTrie(trie->children[i]);
@@ -36,11 +36,11 @@ class Encrypter {
   static const int CN = 26;
   string ctov[CN];
   map<string, string> vtoc;
-  TrieNode* trie;
+  TrieNode *trie;
 
  public:
-  Encrypter(vector<char>& keys, vector<string>& values,
-            vector<string>& dictionary) {
+  Encrypter(vector<char> &keys, vector<string> &values,
+            vector<string> &dictionary) {
     int n = keys.size();
     for (int i = 0; i < n; ++i) {
       ctov[keys[i] - 'a'] = values[i];
@@ -59,11 +59,11 @@ class Encrypter {
 
   int decrypt(string word2) {
     int n = word2.size(), i = 0;
-    vector<TrieNode*> trie_nodes = {trie};
+    vector<TrieNode *> trie_nodes = {trie};
     while (i < n) {
-      vector<TrieNode*> new_trie_nodes;
-      const string& clist = vtoc[word2.substr(i, 2)];
-      for (TrieNode* t : trie_nodes) {
+      vector<TrieNode *> new_trie_nodes;
+      const string &clist = vtoc[word2.substr(i, 2)];
+      for (TrieNode *t : trie_nodes) {
         for (char c : clist) {
           if (t->children[c - 'a']) {
             new_trie_nodes.push_back(t->children[c - 'a']);
@@ -74,7 +74,7 @@ class Encrypter {
       i += 2;
     }
     int r = 0;
-    for (TrieNode* t : trie_nodes) {
+    for (TrieNode *t : trie_nodes) {
       if (t->is_word) ++r;
     }
     return r;

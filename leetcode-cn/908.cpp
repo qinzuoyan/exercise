@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
  public:
-  int smallestRangeI(vector<int>& nums, int k) {
+  int smallestRangeI(vector<int> &nums, int k) {
     int min = 10001, max = -1;
     for (int i : nums) {
       if (i < min) min = i;

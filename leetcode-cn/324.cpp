@@ -6,7 +6,7 @@ class Solution {
  public:
   // time: O(nlog(n))
   // space: O(n)
-  void wiggleSort(vector<int>& nums) {
+  void wiggleSort(vector<int> &nums) {
     int n = nums.size();
     sort(nums.begin(), nums.end());
     vector<int> v(nums);

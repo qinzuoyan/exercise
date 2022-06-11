@@ -1,11 +1,11 @@
+#include <climits>
 #include <string>
 #include <vector>
-#include <climits>
 using namespace std;
 
 class Solution {
  public:
-  int findClosest(vector<string>& words, string word1, string word2) {
+  int findClosest(vector<string> &words, string word1, string word2) {
     int n = words.size();
     int k1 = -1, k2 = -1, r = n;
     for (int i = 0; i < n; ++i) {

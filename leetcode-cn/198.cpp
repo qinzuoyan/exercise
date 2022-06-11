@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
  public:
-  int rob(vector<int>& nums) {
+  int rob(vector<int> &nums) {
     int n = nums.size();
     int a[n], b[n];
     a[0] = nums[0];

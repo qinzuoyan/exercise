@@ -5,7 +5,7 @@ using namespace std;
 class Solution {
  public:
   // O(nlog(n))
-  int findUnsortedSubarray(vector<int>& nums) {
+  int findUnsortedSubarray(vector<int> &nums) {
     vector<int> v = nums;
     sort(v.begin(), v.end());
     int i = 0, n = nums.size();

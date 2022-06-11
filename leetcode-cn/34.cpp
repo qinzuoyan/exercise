@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
  public:
-  vector<int> searchRange(vector<int>& nums, int target) {
+  vector<int> searchRange(vector<int> &nums, int target) {
     vector<int> r({-1, -1});
     for (size_t i = 0; i < nums.size() && nums[i] <= target; i++) {
       if (nums[i] == target) {

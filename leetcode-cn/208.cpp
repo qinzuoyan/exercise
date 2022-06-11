@@ -8,10 +8,10 @@ class Trie {
   Trie() { root_ = new TrieNode(); }
 
   ~Trie() {
-    deque<TrieNode*> to_delete;
+    deque<TrieNode *> to_delete;
     to_delete.push_back(root_);
     while (!to_delete.empty()) {
-      TrieNode* n = to_delete.front();
+      TrieNode *n = to_delete.front();
       to_delete.pop_front();
       for (int i = 0; i < 26; i++) {
         if (n->children[i] != nullptr) {
@@ -23,7 +23,7 @@ class Trie {
   }
 
   void insert(string word) {
-    TrieNode* n = root_;
+    TrieNode *n = root_;
     for (size_t i = 0; i < word.size(); i++) {
       int k = word[i] - 'a';
       if (n->children[k] == nullptr) n->children[k] = new TrieNode();
@@ -33,7 +33,7 @@ class Trie {
   }
 
   bool search(string word) {
-    TrieNode* n = root_;
+    TrieNode *n = root_;
     for (size_t i = 0; i < word.size(); i++) {
       int k = word[i] - 'a';
       if (n->children[k] == nullptr) return false;
@@ -43,7 +43,7 @@ class Trie {
   }
 
   bool startsWith(string prefix) {
-    TrieNode* n = root_;
+    TrieNode *n = root_;
     for (size_t i = 0; i < prefix.size(); i++) {
       int k = prefix[i] - 'a';
       if (n->children[k] == nullptr) return false;
@@ -55,10 +55,10 @@ class Trie {
  private:
   struct TrieNode {
     bool is_word;
-    TrieNode* children[26];
+    TrieNode *children[26];
     TrieNode() : is_word(false) { memset(children, 0, sizeof(children)); }
   };
-  TrieNode* root_;
+  TrieNode *root_;
 };
 
 /**

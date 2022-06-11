@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
  public:
-  int lengthOfLIS(vector<int>& nums) {
+  int lengthOfLIS(vector<int> &nums) {
     int n = nums.size();
     int a[n], r = 1;
     a[0] = 1;

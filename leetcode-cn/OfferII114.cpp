@@ -1,22 +1,22 @@
-#include <string>
 #include <cstring>
+#include <string>
 #include <vector>
 using namespace std;
 
 class Solution {
  public:
-  string alienOrder(vector<string>& words) {
+  string alienOrder(vector<string> &words) {
     int n = words.size(), m[26][26], c[26];
     memset(m, 0, sizeof(m));
     memset(c, -1, sizeof(c));
     for (int i = 0; i < n; ++i) {
-      const char* b = words[i].data();
+      const char *b = words[i].data();
       while (*b) {
         if (c[*b - 'a'] == -1) c[*b - 'a'] = 0;
         ++b;
       }
       if (i == 0) continue;
-      const char* a = words[i - 1].data();
+      const char *a = words[i - 1].data();
       b = words[i].data();
       while (*a && *a == *b) ++a, ++b;
       if (*a) {

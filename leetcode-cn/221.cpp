@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
  public:
-  int maximalSquare(vector<vector<char>>& matrix) {
+  int maximalSquare(vector<vector<char>> &matrix) {
     int m = matrix.size(), n = matrix[0].size(), max = 0;
     int a[m][n];
     memset(a, 0, sizeof(int) * m * n);

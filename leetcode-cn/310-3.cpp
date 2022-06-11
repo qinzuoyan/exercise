@@ -4,14 +4,14 @@ using namespace std;
 
 class Solution {
  public:
-  vector<int> findMinHeightTrees(int n, vector<vector<int>>& edges) {
+  vector<int> findMinHeightTrees(int n, vector<vector<int>> &edges) {
     if (n == 1) {
       return vector<int>(1);
     }
     vector<int> n2n[n];
     int degree[n];
     memset(degree, 0, sizeof(degree));
-    for (auto& v : edges) {
+    for (auto &v : edges) {
       n2n[v[0]].push_back(v[1]);
       n2n[v[1]].push_back(v[0]);
       degree[v[0]]++;

@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
  public:
-  int findPeakElement(vector<int>& nums) {
+  int findPeakElement(vector<int> &nums) {
     int n = nums.size();
     if (n == 1) return 0;
     int i = 0, j = n - 1;

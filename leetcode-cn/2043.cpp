@@ -3,7 +3,7 @@ using namespace std;
 
 class Bank {
  public:
-  Bank(vector<long long>& balance) : _balance(balance) {}
+  Bank(vector<long long> &balance) : _balance(balance) {}
 
   bool transfer(int account1, int account2, long long money) {
     if (account1 < 1 || account1 > (int)_balance.size() || account2 < 1 ||

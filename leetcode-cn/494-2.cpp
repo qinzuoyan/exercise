@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
  public:
-  int findTargetSumWays(vector<int>& nums, int pos, int target, int* a,
+  int findTargetSumWays(vector<int> &nums, int pos, int target, int *a,
                         int max) {
     if (pos < 0) return target == 0 ? 1 : 0;
     int i = pos * max * 2 + target + max;
@@ -14,7 +14,7 @@ class Solution {
     return a[i];
   }
 
-  int findTargetSumWays(vector<int>& nums, int target) {
+  int findTargetSumWays(vector<int> &nums, int target) {
     if (target < 0) target = -target;
     int sum = 0;
     for (int n : nums) sum += n;

@@ -7,27 +7,27 @@ using namespace std;
 class Node {
  public:
   int val;
-  Node* left;
-  Node* right;
-  Node* next;
+  Node *left;
+  Node *right;
+  Node *next;
 
   Node() : val(0), left(nullptr), right(nullptr), next(nullptr) {}
 
   Node(int _val) : val(_val), left(nullptr), right(nullptr), next(nullptr) {}
 
-  Node(int _val, Node* _left, Node* _right, Node* _next)
+  Node(int _val, Node *_left, Node *_right, Node *_next)
       : val(_val), left(_left), right(_right), next(_next) {}
 };
 
 class Solution {
  public:
-  Node* connect(Node* root) {
+  Node *connect(Node *root) {
     if (!root) return root;
-    deque<Node*> d, d1;
+    deque<Node *> d, d1;
     d.push_back(root);
     while (!d.empty()) {
       while (!d.empty()) {
-        Node* n = d.front();
+        Node *n = d.front();
         d.pop_front();
         n->next = d.empty() ? nullptr : d.front();
         if (n->left) d1.push_back(n->left);

@@ -7,14 +7,14 @@ class Solution {
  public:
   struct TrieNode {
     bool is_word;
-    TrieNode* children[26];
+    TrieNode *children[26];
     TrieNode() : is_word(false) { memset(children, 0, sizeof(children)); }
   };
 
-  TrieNode* buildTrie(const vector<string>& dict) {
-    TrieNode* root = new TrieNode();
-    for (const string& s : dict) {
-      TrieNode* n = root;
+  TrieNode *buildTrie(const vector<string> &dict) {
+    TrieNode *root = new TrieNode();
+    for (const string &s : dict) {
+      TrieNode *n = root;
       for (char c : s) {
         size_t i = c - 'a';
         if (n->children[i] == nullptr) n->children[i] = new TrieNode();
@@ -25,8 +25,8 @@ class Solution {
     return root;
   }
 
-  bool wordBreak(vector<string>& r, string& t, const string& s, size_t startpos,
-                 vector<int>& vec, TrieNode* trie) {
+  bool wordBreak(vector<string> &r, string &t, const string &s, size_t startpos,
+                 vector<int> &vec, TrieNode *trie) {
     if (startpos >= s.size()) {
       r.push_back(t);
       return true;
@@ -34,7 +34,7 @@ class Solution {
     if (vec[startpos] == -1) {
       return false;
     }
-    TrieNode* n = trie;
+    TrieNode *n = trie;
     size_t p = startpos;
     while (n && p < s.size()) {
       size_t i = s[p] - 'a';
@@ -60,8 +60,8 @@ class Solution {
     return vec[startpos] == 1;
   }
 
-  vector<string> wordBreak(string s, vector<string>& wordDict) {
-    TrieNode* trie = buildTrie(wordDict);
+  vector<string> wordBreak(string s, vector<string> &wordDict) {
+    TrieNode *trie = buildTrie(wordDict);
     vector<string> r;
     string t;
     vector<int> vec(

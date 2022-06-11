@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
  public:
-  vector<int> findDisappearedNumbers(vector<int>& nums) {
+  vector<int> findDisappearedNumbers(vector<int> &nums) {
     vector<int> r;
     int i = 0, k;
     while (i < (int)nums.size()) {

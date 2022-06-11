@@ -13,10 +13,10 @@ class Solution {
     Stat() : stat(kNoVisit), max0(0), max1(0), max0n(0) {}
   };
 
-  int findHeightExcept(Stat* stats, vector<int>* n2n, int root, int except) {
-    Stat& s = stats[root];
+  int findHeightExcept(Stat *stats, vector<int> *n2n, int root, int except) {
+    Stat &s = stats[root];
     if (s.stat == kNoVisit) {  // kNoVisit
-      vector<int>& v = n2n[root];
+      vector<int> &v = n2n[root];
       for (int i : v) {
         if (i != except) {
           int h = findHeightExcept(stats, n2n, i, root) + 1;
@@ -51,9 +51,9 @@ class Solution {
     }
   }
 
-  vector<int> findMinHeightTrees(int n, vector<vector<int>>& edges) {
+  vector<int> findMinHeightTrees(int n, vector<vector<int>> &edges) {
     vector<int> n2n[n];
-    for (auto& v : edges) {
+    for (auto &v : edges) {
       n2n[v[0]].push_back(v[1]);
       n2n[v[1]].push_back(v[0]);
     }

@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
  public:
-  int firstMissingPositive(vector<int>& nums) {
+  int firstMissingPositive(vector<int> &nums) {
     int n = nums.size();
     for (int i = 0; i < n; i++) {
       int k = nums[i];

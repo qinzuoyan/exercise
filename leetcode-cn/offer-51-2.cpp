@@ -5,15 +5,15 @@ using namespace std;
 
 class BalancedBST {
   struct Node;
-  typedef Node* Tree;
+  typedef Node *Tree;
   struct Node {
     int item;     // Information at this node
     int ht;       // Height of this node
     int sz;       // Item count of this tree
-    Node* left;   // The left subtree
-    Node* right;  // The right subtree
+    Node *left;   // The left subtree
+    Node *right;  // The right subtree
 
-    Node(int it, Node* lft, Node* rgt) : item(it), left(lft), right(rgt) {
+    Node(int it, Node *lft, Node *rgt) : item(it), left(lft), right(rgt) {
       int lht = (lft == NULL ? 0 : lft->ht);
       int rht = (rgt == NULL ? 0 : rgt->ht);
       ht = 1 + std::max(lht, rht);
@@ -214,7 +214,7 @@ class BalancedBST {
   // height-balanced when insert is called.
   //=================================================
 
-  void insert(int x, Tree& T) {
+  void insert(int x, Tree &T) {
     if (T == NULL) {
       T = new Node(x, NULL, NULL);
     } else if (x < T->item) {
@@ -250,7 +250,7 @@ class BalancedBST {
   // is height-balanced when removeSmallest is called.
   //====================================================
 
-  int removeSmallest(Tree& T) {
+  int removeSmallest(Tree &T) {
     if (T->left == NULL) {
       int result = T->item;
       Tree p = T;
@@ -276,7 +276,7 @@ class BalancedBST {
   // when remove is called.
   //====================================================
 
-  void remove(int x, Tree& T) {
+  void remove(int x, Tree &T) {
     if (T != NULL) {
       if (x < T->item) {
         remove(x, T->left);
@@ -307,7 +307,7 @@ class BalancedBST {
   // root of T.
   //==========================================
 
-  void singleRotateLeft(Tree& T) {
+  void singleRotateLeft(Tree &T) {
     Tree r = T->right;
     T->right = r->left;
     installHeight(T);
@@ -327,7 +327,7 @@ class BalancedBST {
   // root of T.
   //==========================================
 
-  void singleRotateRight(Tree& T) {
+  void singleRotateRight(Tree &T) {
     Tree L = T->left;
     T->left = L->right;
     installHeight(T);
@@ -347,7 +347,7 @@ class BalancedBST {
   // root of T.
   //==========================================
 
-  void doubleRotateLeft(Tree& T) {
+  void doubleRotateLeft(Tree &T) {
     singleRotateRight(T->right);
     singleRotateLeft(T);
   }
@@ -360,7 +360,7 @@ class BalancedBST {
   // root of T.
   //==========================================
 
-  void doubleRotateRight(Tree& T) {
+  void doubleRotateRight(Tree &T) {
     singleRotateLeft(T->left);
     singleRotateRight(T);
   }
@@ -373,7 +373,7 @@ class BalancedBST {
   // choosing a single or double rotation.
   //==========================================
 
-  void rotateLeft(Tree& T) {
+  void rotateLeft(Tree &T) {
     Tree r = T->right;
     int zag = height(r->left);
     int zig = height(r->right);
@@ -393,7 +393,7 @@ class BalancedBST {
   // choosing a single or double rotation.
   //==========================================
 
-  void rotateRight(Tree& T) {
+  void rotateRight(Tree &T) {
     Tree L = T->left;
     int zig = height(L->left);
     int zag = height(L->right);
@@ -419,7 +419,7 @@ class BalancedBST {
   // Requirement: T must not be empty.
   //==========================================
 
-  void rebalance(Tree& T) {
+  void rebalance(Tree &T) {
     int hl = height(T->left);
     int hr = height(T->right);
 
@@ -439,7 +439,7 @@ class BalancedBST {
   // destroy(T) release all nodes of tree T.
   //==========================================
 
-  void destroy(Tree& T) {
+  void destroy(Tree &T) {
     if (T != NULL) {
       destroy(T->left);
       destroy(T->right);
@@ -456,7 +456,7 @@ class Solution {
  public:
   // balanced binary search tree
   // O(nlog(n))
-  int reversePairs(vector<int>& nums) {
+  int reversePairs(vector<int> &nums) {
     int n = nums.size(), r = 0;
     BalancedBST tr(true);
     for (int i = n - 1; i >= 0; --i) {

@@ -6,7 +6,7 @@ class Solution {
  public:
   // time: O(n)
   // space: O(1)
-  int missingNumber(vector<int>& nums) {
+  int missingNumber(vector<int> &nums) {
     int n = nums.size();
     nums.push_back(-1);
     int *a = &nums[0], c = n, i = 0;

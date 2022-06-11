@@ -1,10 +1,10 @@
-#include <string>
-#include <cstring>
 #include <cstdio>
+#include <cstring>
+#include <string>
 using namespace std;
 
 class Solution {
-public:
+ public:
   string digitSum(string s, int k) {
     char a[101];
     strcpy(a, s.data());

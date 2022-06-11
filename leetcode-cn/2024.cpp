@@ -27,7 +27,7 @@ class Solution {
                maxAnswerWithFirstHold(a + 1, z - 1, k));
   }
 
-  int maxAnswerWithFirstHold(int* a, int z, int k) {
+  int maxAnswerWithFirstHold(int *a, int z, int k) {
     int hold = a[0], change = 0, pos = 0, max = a[0] + k;
     for (int i = 2; i < z; i += 2) {
       change += a[i - 1];

@@ -6,9 +6,9 @@ using namespace std;
 
 class Solution {
  public:
-  int evalRPN(vector<string>& tokens) {
+  int evalRPN(vector<string> &tokens) {
     stack<int> s;
-    for (auto& t : tokens) {
+    for (auto &t : tokens) {
       if (t == "+" || t == "-" || t == "*" || t == "/") {
         int b = s.top();
         s.pop();

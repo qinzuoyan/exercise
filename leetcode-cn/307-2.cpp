@@ -4,9 +4,9 @@ using namespace std;
 class NumArray {
  private:
   int _n;
-  int* _v;
+  int *_v;
 
-  int construct(int l, int r, int i, vector<int>& nums) {
+  int construct(int l, int r, int i, vector<int> &nums) {
     if (l == r) {
       return (_v[i] = nums[l]);
     }
@@ -41,7 +41,7 @@ class NumArray {
   }
 
  public:
-  NumArray(vector<int>& nums) {
+  NumArray(vector<int> &nums) {
     _n = nums.size();
     _v = new int[_n * 4];
     construct(0, _n - 1, 1, nums);

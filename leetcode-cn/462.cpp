@@ -1,16 +1,16 @@
-#include <vector>
-#include <cmath>
 #include <climits>
+#include <cmath>
+#include <vector>
 using namespace std;
 
 class Solution {
  public:
-  long long check(vector<int>& nums, int k) {
+  long long check(vector<int> &nums, int k) {
     long long s = 0;
     for (int i : nums) s += abs(k - i);
     return s;
   }
-  int minMoves2(vector<int>& nums) {
+  int minMoves2(vector<int> &nums) {
     int n = nums.size(), x = INT_MAX, y = INT_MIN;
     for (int i : nums) {
       if (i < x) x = i;

@@ -6,7 +6,7 @@ using namespace std;
 
 class Solution {
  public:
-  void calc(stack<char>& s, stack<int>& n) {
+  void calc(stack<char> &s, stack<int> &n) {
     char c = s.top();
     s.pop();
     int b = n.top();
@@ -27,7 +27,7 @@ class Solution {
   int calculate(string s) {
     stack<char> sign;
     stack<int> num;
-    const char* p = s.data();
+    const char *p = s.data();
     char c;
     while ((c = *p)) {
       if (isspace(c)) {
@@ -45,7 +45,7 @@ class Solution {
         sign.push(c);
         p++;
       } else {  // number
-        char* q;
+        char *q;
         num.push(strtol(p, &q, 10));
         assert(p != q);
         p = q;

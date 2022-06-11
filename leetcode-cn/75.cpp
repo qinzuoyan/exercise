@@ -5,7 +5,7 @@ using namespace std;
 class Solution {
  public:
   // O(2n)
-  void sortColors(vector<int>& nums) {
+  void sortColors(vector<int> &nums) {
     int c[3];
     memset(c, 0, sizeof(c));
     for (int i : nums) c[i]++;

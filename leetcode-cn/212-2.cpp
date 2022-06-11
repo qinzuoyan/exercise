@@ -14,12 +14,12 @@ class Solution {
     }
   };
 
-  int buildTrie(vector<TrieNode>& trie, const vector<string>& dict) {
+  int buildTrie(vector<TrieNode> &trie, const vector<string> &dict) {
     int root = trie.size();
     trie.emplace_back();
     int m = dict.size();
     for (int id = 0; id < m; id++) {
-      const string& s = dict[id];
+      const string &s = dict[id];
       int n = root;
       for (char c : s) {
         size_t i = c - 'a';
@@ -35,12 +35,12 @@ class Solution {
     return root;
   }
 
-  int find(vector<vector<char>>& board, vector<TrieNode>& trie, int root,
-           size_t i, size_t j, vector<int>& found) {
+  int find(vector<vector<char>> &board, vector<TrieNode> &trie, int root,
+           size_t i, size_t j, vector<int> &found) {
     if (board[i][j] < 0) {  // visited
       return 0;
     }
-    TrieNode* tr = &trie[root];
+    TrieNode *tr = &trie[root];
     int ci = board[i][j] - 'a';
     if (tr->children[ci] == -1) {
       return 0;
@@ -74,7 +74,7 @@ class Solution {
     return wc;
   }
 
-  vector<string> findWords(vector<vector<char>>& board, vector<string>& words) {
+  vector<string> findWords(vector<vector<char>> &board, vector<string> &words) {
     vector<int> found;
     vector<TrieNode> trie;
     int root = buildTrie(trie, words);

@@ -10,15 +10,15 @@ struct DListNode {
 
 // return new head
 // `insert' must not be nullptr
-DListNode* insert_before(DListNode* head, DListNode* insert,
-                         DListNode* before) {
+DListNode *insert_before(DListNode *head, DListNode *insert,
+                         DListNode *before) {
   if (head == nullptr) {
     assert(before == nullptr);
     insert->prev = insert;
     insert->next = insert;
     return insert;
   }
-  DListNode* prev = before->prev;
+  DListNode *prev = before->prev;
   prev->next = insert;
   insert->next = before;
   before->prev = insert;
@@ -28,14 +28,14 @@ DListNode* insert_before(DListNode* head, DListNode* insert,
 
 // return new head
 // `insert' must not be nullptr
-DListNode* insert_after(DListNode* head, DListNode* insert, DListNode* after) {
+DListNode *insert_after(DListNode *head, DListNode *insert, DListNode *after) {
   if (head == nullptr) {
     assert(after == nullptr);
     insert->prev = insert;
     insert->next = insert;
     return insert;
   }
-  DListNode* next = after->next;
+  DListNode *next = after->next;
   after->next = insert;
   insert->next = next;
   next->prev = insert;
@@ -45,13 +45,13 @@ DListNode* insert_after(DListNode* head, DListNode* insert, DListNode* after) {
 
 // return new head (may be nullptr)
 // `insert' must not be nullptr
-DListNode* delete_node(DListNode* head, DListNode* node) {
+DListNode *delete_node(DListNode *head, DListNode *node) {
   if (head == nullptr || head->next == head) {
     assert(head == node);
     return nullptr;
   }
-  DListNode* prev = node->prev;
-  DListNode* next = node->next;
+  DListNode *prev = node->prev;
+  DListNode *next = node->next;
   prev->next = next;
   next->prev = prev;
   return head == node ? next : head;
@@ -61,28 +61,28 @@ class AllOne {
  private:
   struct KeyNode : DListNode {
     string key;
-    DListNode* count_node;
-    KeyNode(const string& s) : key(s), count_node(nullptr) {}
+    DListNode *count_node;
+    KeyNode(const string &s) : key(s), count_node(nullptr) {}
   };
 
   struct CountNode : DListNode {
     int count;
-    DListNode* key_node;
+    DListNode *key_node;
     CountNode(int c) : count(c), key_node(nullptr) {}
   };
 
-  unordered_map<string, DListNode*> map_;
-  DListNode* list_;
+  unordered_map<string, DListNode *> map_;
+  DListNode *list_;
 
  public:
   AllOne() : list_(nullptr) {}
 
   void inc(string key) {
-    unordered_map<string, DListNode*>::iterator it = map_.find(key);
+    unordered_map<string, DListNode *>::iterator it = map_.find(key);
     if (it == map_.end()) {
-      KeyNode* knode = new KeyNode(key);
+      KeyNode *knode = new KeyNode(key);
       map_.emplace(make_pair(key, knode));
-      CountNode* cnode = (CountNode*)list_;
+      CountNode *cnode = (CountNode *)list_;
       if (cnode == nullptr || cnode->count != 1) {
         cnode = new CountNode(1);
         list_ = insert_before(list_, cnode, list_);
@@ -90,10 +90,10 @@ class AllOne {
       knode->count_node = cnode;
       cnode->key_node = insert_before(cnode->key_node, knode, cnode->key_node);
     } else {
-      KeyNode* knode = (KeyNode*)it->second;
-      CountNode* cnode = (CountNode*)knode->count_node;
+      KeyNode *knode = (KeyNode *)it->second;
+      CountNode *cnode = (CountNode *)knode->count_node;
       // get or new CountNode with (count+1)
-      CountNode* cnodeNext = (CountNode*)cnode->next;
+      CountNode *cnodeNext = (CountNode *)cnode->next;
       if (cnodeNext->count != cnode->count + 1) {
         cnodeNext = new CountNode(cnode->count + 1);
         list_ = insert_after(list_, cnodeNext, cnode);
@@ -112,14 +112,14 @@ class AllOne {
   }
 
   void dec(string key) {
-    unordered_map<string, DListNode*>::iterator it = map_.find(key);
+    unordered_map<string, DListNode *>::iterator it = map_.find(key);
     if (it != map_.end()) {
-      KeyNode* knode = (KeyNode*)it->second;
-      CountNode* cnode = (CountNode*)knode->count_node;
-      CountNode* cnodePrev = nullptr;
+      KeyNode *knode = (KeyNode *)it->second;
+      CountNode *cnode = (CountNode *)knode->count_node;
+      CountNode *cnodePrev = nullptr;
       if (cnode->count > 1) {
         // get or new CountNode with (count-1)
-        cnodePrev = (CountNode*)cnode->prev;
+        cnodePrev = (CountNode *)cnode->prev;
         if (cnodePrev->count != cnode->count - 1) {
           cnodePrev = new CountNode(cnode->count - 1);
           list_ = insert_before(list_, cnodePrev, cnode);
@@ -145,15 +145,15 @@ class AllOne {
 
   string getMaxKey() {
     if (list_ == nullptr) return "";
-    CountNode* cnode = (CountNode*)(list_->prev);
-    KeyNode* knode = (KeyNode*)cnode->key_node;
+    CountNode *cnode = (CountNode *)(list_->prev);
+    KeyNode *knode = (KeyNode *)cnode->key_node;
     return knode->key;
   }
 
   string getMinKey() {
     if (list_ == nullptr) return "";
-    CountNode* cnode = (CountNode*)list_;
-    KeyNode* knode = (KeyNode*)cnode->key_node;
+    CountNode *cnode = (CountNode *)list_;
+    KeyNode *knode = (KeyNode *)cnode->key_node;
     return knode->key;
   }
 };

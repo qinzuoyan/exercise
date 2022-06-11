@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
  public:
-  vector<vector<int>> imageSmoother(vector<vector<int>>& img) {
+  vector<vector<int>> imageSmoother(vector<vector<int>> &img) {
     int m = img.size(), n = img[0].size();
     int x = -1, xn, y = -1, yn;
     vector<vector<int>> r(m);

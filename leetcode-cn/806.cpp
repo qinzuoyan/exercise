@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
  public:
-  vector<int> numberOfLines(vector<int>& widths, string s) {
+  vector<int> numberOfLines(vector<int> &widths, string s) {
     int l = 1, n = 100, w = 0;
     for (char c : s) {
       int k = widths[c - 'a'];
