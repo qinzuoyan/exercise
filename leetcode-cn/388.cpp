@@ -8,7 +8,7 @@ class Solution {
     int cur_len = 0, tab_count = 0, r = 0;
     bool found_ext = false;
     vector<int> v;
-    const char* p = input.data();
+    const char *p = input.data();
     while (true) {
       char c = *p;
       if (c == '\n' || c == '\0') {

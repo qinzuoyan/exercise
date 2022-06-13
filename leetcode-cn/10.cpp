@@ -11,7 +11,7 @@ class Solution {
     return isMatch(s, p, v, sn, pn);
   }
 
-  bool isMatch(string& s, string& p, vector<vector<int>>& v, int sn, int pn) {
+  bool isMatch(string &s, string &p, vector<vector<int>> &v, int sn, int pn) {
     if (v[sn][pn] > 0) {
       return v[sn][pn] == 1;
     }

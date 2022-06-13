@@ -12,14 +12,14 @@ struct N {
   int y;
   long long v;
   N(int _x, int _y, long long _v) : x(_x), y(_y), v(_v) {}
-  bool operator<(const N& o) const {
+  bool operator<(const N &o) const {
     if (v < o.v) return true;
     if (v > o.v) return false;
     return x < o.x;
   }
 };
 
-bool compare479(const N& a, const N& b) {
+bool compare479(const N &a, const N &b) {
   if (a.v < b.v) return true;
   if (a.v > b.v) return false;
   return a.x < b.x;

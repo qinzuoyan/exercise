@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
  public:
-  int mergeSort(int* a, int i, int j, int* b) {
+  int mergeSort(int *a, int i, int j, int *b) {
     if (i == j) {
       return 0;
     }
@@ -31,7 +31,7 @@ class Solution {
 
   // merge sort
   // O(nlog(n))
-  int reversePairs(vector<int>& nums) {
+  int reversePairs(vector<int> &nums) {
     int n = nums.size();
     if (n <= 1) {
       return 0;

@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
  public:
-  vector<string> findRestaurant(vector<string>& list1, vector<string>& list2) {
+  vector<string> findRestaurant(vector<string> &list1, vector<string> &list2) {
     vector<string> r;
     if (list1.empty() || list2.empty()) return r;
     unordered_map<string, size_t> m;

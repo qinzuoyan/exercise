@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
  public:
-  int numSubarrayProductLessThanK(vector<int>& nums, int k) {
+  int numSubarrayProductLessThanK(vector<int> &nums, int k) {
     if (k == 0) return 0;
     int n = nums.size(), i = 0, j = 0, m = 1, r = 0;
     while (j < n) {

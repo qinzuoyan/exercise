@@ -6,7 +6,7 @@ using namespace std;
 class NumArray {
  private:
   int _n;
-  int* _v;
+  int *_v;
 
   int insert(int l, int r, int i, int index) {
     if (index < l || r < index) {
@@ -50,7 +50,7 @@ class NumArray {
 
 class Solution {
  public:
-  vector<int> countSmaller(vector<int>& nums) {
+  vector<int> countSmaller(vector<int> &nums) {
     int min_num = INT_MAX, max_num = INT_MIN;
     for (int i : nums) {
       min_num = min(min_num, i);

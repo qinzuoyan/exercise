@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
  public:
-  int minDeletionSize(vector<string>& strs) {
+  int minDeletionSize(vector<string> &strs) {
     int n = strs.size(), m = strs[0].size(), r = 0;
     if (n == 1) return r;
     for (int j = 0; j < m; ++j) {
@@ -18,4 +18,3 @@ class Solution {
     return r;
   }
 };
-

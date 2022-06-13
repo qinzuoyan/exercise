@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
  public:
-  vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+  vector<vector<int>> combinationSum(vector<int> &candidates, int target) {
     vector<vector<int>> r;
     sort(candidates.begin(), candidates.end());
     int i = candidates.size() - 1;
@@ -17,8 +17,8 @@ class Solution {
     return r;
   }
 
-  void combinationSum(vector<vector<int>>& r, vector<int>& t,
-                      const vector<int>& c, int target, int k) {
+  void combinationSum(vector<vector<int>> &r, vector<int> &t,
+                      const vector<int> &c, int target, int k) {
     if (target == 0) {
       r.push_back(t);
       return;

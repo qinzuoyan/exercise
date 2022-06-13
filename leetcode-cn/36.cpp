@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
  public:
-  bool isValidSudoku(vector<vector<char>>& board) {
+  bool isValidSudoku(vector<vector<char>> &board) {
     int a[10];
     for (int i = 0; i < 9; i++) {
       memset(a, 0, sizeof(a));

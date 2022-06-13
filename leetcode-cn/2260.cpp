@@ -1,12 +1,12 @@
-#include <vector>
-#include <utility>
 #include <algorithm>
 #include <climits>
+#include <utility>
+#include <vector>
 using namespace std;
 
 class Solution {
  public:
-  int minimumCardPickup(vector<int>& cards) {
+  int minimumCardPickup(vector<int> &cards) {
     int n = cards.size();
     vector<pair<int, int>> v(n);
     for (int i = 0; i < n; ++i) {

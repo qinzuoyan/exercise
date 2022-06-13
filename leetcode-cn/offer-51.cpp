@@ -7,7 +7,7 @@ using namespace std;
 class BinaryIndexTree {
  private:
   int _n;
-  int* _v;
+  int *_v;
   int lowbit(int i) { return i & (-i); }
 
  public:
@@ -37,7 +37,7 @@ class Solution {
  public:
   // sparse binary index tree
   // O(nlog(n))
-  int reversePairs(vector<int>& nums) {
+  int reversePairs(vector<int> &nums) {
     vector<int> sorted(nums);
     sort(sorted.begin(), sorted.end());
     unordered_map<int, int> m;

@@ -5,7 +5,7 @@ using namespace std;
 class Solution {
  public:
   // O(n*s)
-  bool canPartition(vector<int>& nums) {
+  bool canPartition(vector<int> &nums) {
     int n = nums.size(), s = 0;
     for (int num : nums) {
       s += num;
@@ -17,7 +17,7 @@ class Solution {
     return canPartition(nums, a, s, n - 1, s);
   }
 
-  bool canPartition(vector<int>& nums, int* a, int s, int pos, int sum) {
+  bool canPartition(vector<int> &nums, int *a, int s, int pos, int sum) {
     int i = s * pos + sum - 1;
     if (a[i] != -1) {
       return a[i];

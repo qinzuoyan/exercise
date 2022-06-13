@@ -11,10 +11,10 @@ class NumArray {
         : sum(0), left(l), right(r), lptr(nullptr), rptr(nullptr) {}
   };
 
-  Node* _root;
+  Node *_root;
 
-  Node* construct(vector<int>& nums, int left, int right) {
-    Node* node = new Node(left, right);
+  Node *construct(vector<int> &nums, int left, int right) {
+    Node *node = new Node(left, right);
     if (left == right) {
       node->sum = nums[left];
       return node;
@@ -26,7 +26,7 @@ class NumArray {
     return node;
   }
 
-  void update(Node* node, int index, int val) {
+  void update(Node *node, int index, int val) {
     if (index < node->left || index > node->right) return;
     if (node->left == node->right) {
       node->sum = val;
@@ -37,7 +37,7 @@ class NumArray {
     node->sum = node->lptr->sum + node->rptr->sum;
   }
 
-  int sumRange(Node* node, int left, int right) {
+  int sumRange(Node *node, int left, int right) {
     if (node->right < left || node->left > right) return 0;
     if (left <= node->left && right >= node->right) return node->sum;
     return sumRange(node->lptr, left, right) +
@@ -45,7 +45,7 @@ class NumArray {
   }
 
  public:
-  NumArray(vector<int>& nums) { _root = construct(nums, 0, nums.size() - 1); }
+  NumArray(vector<int> &nums) { _root = construct(nums, 0, nums.size() - 1); }
 
   void update(int index, int val) { update(_root, index, val); }
 

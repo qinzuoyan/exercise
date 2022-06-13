@@ -13,7 +13,7 @@ class Solution {
     return minDistance(a, n2, word1, n1 - 1, word2, n2 - 1);
   }
 
-  int minDistance(int* a, int n, string& w1, int i1, string& w2, int i2) {
+  int minDistance(int *a, int n, string &w1, int i1, string &w2, int i2) {
     if (i1 < 0) return i2 + 1;
     if (i2 < 0) return i1 + 1;
     int p = i1 * n + i2;

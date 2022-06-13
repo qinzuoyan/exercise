@@ -48,17 +48,17 @@ class UnionFindSet {
 
 class Solution {
  public:
-  vector<double> calcEquation(vector<vector<string>>& equations,
-                              vector<double>& values,
-                              vector<vector<string>>& queries) {
+  vector<double> calcEquation(vector<vector<string>> &equations,
+                              vector<double> &values,
+                              vector<vector<string>> &queries) {
     vector<double> r;
     map<string, int> stoi;
     map<pair<int, int>, double> itov;
     UnionFindSet uset;
     int n = equations.size();
     for (int i = 0; i < n; i++) {
-      string& a = equations[i][0];
-      string& b = equations[i][1];
+      string &a = equations[i][0];
+      string &b = equations[i][1];
       int ai, bi;
       auto it = stoi.find(a);
       if (it != stoi.end()) {
@@ -81,9 +81,9 @@ class Solution {
       itov.emplace(make_pair(ai, bi), values[i]);
       itov.emplace(make_pair(bi, ai), 1 / values[i]);
     }
-    for (auto& vs : queries) {
-      string& a = vs[0];
-      string& b = vs[1];
+    for (auto &vs : queries) {
+      string &a = vs[0];
+      string &b = vs[1];
       int ai, bi;
       auto it = stoi.find(a);
       if (it == stoi.end()) {
@@ -112,8 +112,8 @@ class Solution {
     return r;
   }
 
-  bool find(map<pair<int, int>, double>& itov, set<int>& visited, int a, int b,
-            double* v) {
+  bool find(map<pair<int, int>, double> &itov, set<int> &visited, int a, int b,
+            double *v) {
     auto it = itov.find(make_pair(a, b));
     if (it != itov.end()) {
       *v = it->second;

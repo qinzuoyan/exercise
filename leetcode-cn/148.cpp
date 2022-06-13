@@ -3,16 +3,16 @@
  */
 struct ListNode {
   int val;
-  ListNode* next;
+  ListNode *next;
   ListNode() : val(0), next(nullptr) {}
   ListNode(int x) : val(x), next(nullptr) {}
-  ListNode(int x, ListNode* next) : val(x), next(next) {}
+  ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
 class Solution {
  public:
   // refer to problem 21
-  ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+  ListNode *mergeTwoLists(ListNode *list1, ListNode *list2) {
     if (!list1) return list2;
     if (!list2) return list1;
     ListNode *r, *t;
@@ -39,24 +39,24 @@ class Solution {
     return r;
   }
 
-  ListNode* sortList(ListNode* head, int n) {
+  ListNode *sortList(ListNode *head, int n) {
     if (n == 1) return head;
     int m = n / 2;
-    ListNode* left = head;
-    ListNode* rightPre = head;
+    ListNode *left = head;
+    ListNode *rightPre = head;
     int i = m;
     while (--i) rightPre = rightPre->next;
-    ListNode* right = rightPre->next;
+    ListNode *right = rightPre->next;
     rightPre->next = nullptr;
-    ListNode* leftSort = sortList(left, m);
-    ListNode* rightSort = sortList(right, n - m);
+    ListNode *leftSort = sortList(left, m);
+    ListNode *rightSort = sortList(right, n - m);
     return mergeTwoLists(leftSort, rightSort);
   }
 
-  ListNode* sortList(ListNode* head) {
+  ListNode *sortList(ListNode *head) {
     if (!head) return nullptr;
     int n = 0;
-    ListNode* t = head;
+    ListNode *t = head;
     while (t) {
       n++;
       t = t->next;

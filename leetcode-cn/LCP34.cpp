@@ -7,14 +7,14 @@ using namespace std;
  */
 struct TreeNode {
   int val;
-  TreeNode* left;
-  TreeNode* right;
+  TreeNode *left;
+  TreeNode *right;
   TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
 class Solution {
  public:
-  void run(TreeNode* n, int* a, int k) {
+  void run(TreeNode *n, int *a, int k) {
     memset(a, 0, sizeof(int) * (k + 1));
     if (n == nullptr) return;
     int a1[k + 1], a2[k + 1];
@@ -27,7 +27,7 @@ class Solution {
       }
     }
   }
-  int maxValue(TreeNode* root, int k) {
+  int maxValue(TreeNode *root, int k) {
     int a[k + 1];
     run(root, a, k);
     int m = 0;

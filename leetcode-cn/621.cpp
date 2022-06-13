@@ -6,7 +6,7 @@ using namespace std;
 
 class Solution {
  public:
-  int leastInterval(vector<char>& tasks, int n) {
+  int leastInterval(vector<char> &tasks, int n) {
     int a[26];
     memset(a, 0, sizeof(a));
     for (char c : tasks) a[c - 'A']++;

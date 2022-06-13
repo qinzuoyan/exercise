@@ -4,7 +4,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   typedef pair<int, int> Point;
   double cos(const Point &a, const Point &m, const Point &b) {
     Point ma = {a.first - m.first, a.second - m.second};
@@ -17,8 +17,7 @@ public:
   }
 
   vector<vector<int>> outerTrees(vector<vector<int>> &trees) {
-    if (trees.size() <= 2)
-      return trees;
+    if (trees.size() <= 2) return trees;
     Point p0 = {101, 101};
     set<Point> s;
     for (auto &v : trees) {
@@ -34,8 +33,7 @@ public:
       double mcos = 1;
       vector<Point> v;
       for (auto &p : s) {
-        if (round == 1 && p == p0)
-          continue;
+        if (round == 1 && p == p0) continue;
         double c = cos(p1, p2, p);
         if (abs(c - mcos) < 0.00000001) {
           v.push_back(p);
@@ -56,8 +54,7 @@ public:
           d = cd;
           t = p;
         }
-        if (p == p0)
-          done = true;
+        if (p == p0) done = true;
       }
       if (!done) {
         p1 = p2;

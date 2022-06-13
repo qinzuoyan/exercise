@@ -4,7 +4,7 @@
 #include <vector>
 using namespace std;
 
-bool SortCompare(const vector<int>& a, const vector<int>& b) {
+bool SortCompare(const vector<int> &a, const vector<int> &b) {
   if (a.size() < 3) return true;
   if (b.size() < 3) return false;
   if (a[0] < b[0]) return true;
@@ -14,13 +14,13 @@ bool SortCompare(const vector<int>& a, const vector<int>& b) {
   return a[2] < b[2];
 }
 
-bool UniqueCompare(const vector<int>& a, const vector<int>& b) {
+bool UniqueCompare(const vector<int> &a, const vector<int> &b) {
   return a[0] == b[0] && a[1] == b[1] && a[2] == b[2];
 }
 
 class Solution {
  public:
-  vector<vector<int>> threeSum(vector<int>& nums) {
+  vector<vector<int>> threeSum(vector<int> &nums) {
     vector<vector<int>> r;
     if (nums.size() < 3) return r;
     sort(nums.begin(), nums.end());

@@ -9,7 +9,7 @@ class Solution {
     a[0] = 1;
     return uniquePaths(a, n, m - 1, n - 1);
   }
-  int uniquePaths(int* a, int n, int i, int j) {
+  int uniquePaths(int *a, int n, int i, int j) {
     int p = i * n + j;
     if (a[p] > 0) return a[p];
     int s = 0;

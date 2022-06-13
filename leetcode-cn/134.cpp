@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
  public:
-  int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {
+  int canCompleteCircuit(vector<int> &gas, vector<int> &cost) {
     int n = gas.size();
     int a[n], sum = 0, max = 0;
     for (int i = 0; i < n; i++) {

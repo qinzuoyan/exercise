@@ -12,10 +12,10 @@ class Solution {
     int coins_sum;  // subtree coins sum
     N() : parent(0), members(1), coins(0), coins_sum(0) {}
   };
-  vector<int> bonus(int n, vector<vector<int>>& leadership,
-                    vector<vector<int>>& operations) {
+  vector<int> bonus(int n, vector<vector<int>> &leadership,
+                    vector<vector<int>> &operations) {
     N a[n + 1];
-    for (auto& v : leadership) {
+    for (auto &v : leadership) {
       int parent = v[0], child = v[1];
       a[child].parent = parent;
       while (parent) {
@@ -24,7 +24,7 @@ class Solution {
       }
     }
     vector<int> r;
-    for (auto& v : operations) {
+    for (auto &v : operations) {
       if (v[0] == 1) {  // give one
         int i = v[1], c = v[2];
         while (i) {

@@ -18,13 +18,13 @@ class Deque {
 
   T back() const { return _arr[_tail]; }
 
-  void push_front(const T& v) {
+  void push_front(const T &v) {
     _head = (_head == 0 ? _cap - 1 : _head - 1);
     _arr[_head] = v;
     ++_size;
   }
 
-  void push_back(const T& v) {
+  void push_back(const T &v) {
     _tail = (_tail == _cap - 1 ? 0 : _tail + 1);
     _arr[_tail] = v;
     ++_size;
@@ -45,14 +45,14 @@ class Deque {
   bool empty() const { return _size == 0; }
 
  private:
-  T* _arr;
+  T *_arr;
   size_t _cap, _size, _head, _tail;
 };
 
 class Solution {
  public:
   // O(n)
-  vector<int> maxSlidingWindow(vector<int>& nums, int k) {
+  vector<int> maxSlidingWindow(vector<int> &nums, int k) {
     vector<int> r;
     Deque<int> q(k + 1);
     int n = nums.size();

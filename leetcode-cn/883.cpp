@@ -1,16 +1,16 @@
-#include <vector>
 #include <cstring>
+#include <vector>
 using namespace std;
 
 class Solution {
  public:
-  int projectionArea(vector<vector<int>>& grid) {
+  int projectionArea(vector<vector<int>> &grid) {
     int n = grid.size();
     int y[n], z[n], r = 0;
     memset(y, 0, sizeof(y));
     memset(z, 0, sizeof(z));
     for (int i = 0; i < n; ++i) {
-      vector<int>& v = grid[i];
+      vector<int> &v = grid[i];
       for (int j = 0; j < n; ++j) {
         int k = v[j];
         if (k) {

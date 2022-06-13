@@ -6,18 +6,18 @@ using namespace std;
 class Solution {
  public:
   struct TrieNode {
-    const char* word;
+    const char *word;
     int word_count;
-    TrieNode* children[26];
+    TrieNode *children[26];
     TrieNode() : word(nullptr), word_count(0) {
       memset(children, 0, sizeof(children));
     }
   };
 
-  TrieNode* buildTrie(const vector<string>& dict) {
-    TrieNode* root = new TrieNode();
-    for (const string& s : dict) {
-      TrieNode* n = root;
+  TrieNode *buildTrie(const vector<string> &dict) {
+    TrieNode *root = new TrieNode();
+    for (const string &s : dict) {
+      TrieNode *n = root;
       for (char c : s) {
         size_t i = c - 'a';
         if (n->children[i] == nullptr) n->children[i] = new TrieNode();
@@ -29,8 +29,8 @@ class Solution {
     return root;
   }
 
-  int find(vector<vector<char>>& board, TrieNode* trie, size_t i, size_t j,
-           vector<string>& found) {
+  int find(vector<vector<char>> &board, TrieNode *trie, size_t i, size_t j,
+           vector<string> &found) {
     if (board[i][j] < 0) {  // visited
       return 0;
     }
@@ -63,8 +63,8 @@ class Solution {
     return wc;
   }
 
-  vector<string> findWords(vector<vector<char>>& board, vector<string>& words) {
-    TrieNode* trie = buildTrie(words);
+  vector<string> findWords(vector<vector<char>> &board, vector<string> &words) {
+    TrieNode *trie = buildTrie(words);
     size_t m = board.size(), n = board[0].size();
     vector<string> found;
     for (size_t i = 0; i < m; i++) {

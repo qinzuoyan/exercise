@@ -13,16 +13,16 @@ class HeapDeque {
   struct _S {
     T data;
     size_type pos;
-    _S* prev;
-    _S* next;
-    _S(const value_type& v, size_type p)
+    _S *prev;
+    _S *next;
+    _S(const value_type &v, size_type p)
         : data(v), pos(p), prev(NULL), next(NULL) {}
   };
 
  public:
   HeapDeque() : _array(NULL), _array_len(8), _size(0), _deque_front(NULL) {
-    _array = new _S*[_array_len];
-    memset(_array, 0, sizeof(_S*) * _array_len);
+    _array = new _S *[_array_len];
+    memset(_array, 0, sizeof(_S *) * _array_len);
   }
   ~HeapDeque() {
     for (size_type i = 0; i < _size; ++i) {
@@ -32,31 +32,31 @@ class HeapDeque {
   }
   size_type size() const { return _size; }
   bool empty() const { return _size == 0; }
-  void push_front(const value_type& val) { push(val, true); }
-  void push_back(const value_type& val) { push(val, false); }
+  void push_front(const value_type &val) { push(val, true); }
+  void push_back(const value_type &val) { push(val, false); }
   void pop_front() { pop(true); }
   void pop_back() { pop(false); }
-  value_type& front() {
+  value_type &front() {
     assert(_size != 0);
     return _deque_front->data;
   }
-  const value_type& front() const {
+  const value_type &front() const {
     assert(_size != 0);
     return _deque_front->data;
   }
-  value_type& back() {
+  value_type &back() {
     assert(_size != 0);
     return _deque_front->prev->data;
   }
-  const value_type& back() const {
+  const value_type &back() const {
     assert(_size != 0);
     return _deque_front->prev->data;
   }
-  value_type& heap_top() {
+  value_type &heap_top() {
     assert(_size != 0);
     return _array[0]->data;
   }
-  const value_type& heap_top() const {
+  const value_type &heap_top() const {
     assert(_size != 0);
     return _array[0]->data;
   }
@@ -64,17 +64,17 @@ class HeapDeque {
  private:
   void extend_array() {
     _array_len = _array_len << 1;
-    _S** new_array = new _S*[_array_len];
-    memcpy(new_array, _array, sizeof(_S*) * _size);
-    memset(&new_array[_size], 0, sizeof(_S*) * _size);
+    _S **new_array = new _S *[_array_len];
+    memcpy(new_array, _array, sizeof(_S *) * _size);
+    memset(&new_array[_size], 0, sizeof(_S *) * _size);
     delete[] _array;
     _array = new_array;
   }
-  void push(const value_type& val, bool front) {
+  void push(const value_type &val, bool front) {
     if (_size == _array_len) {
       extend_array();
     }
-    _S* n = new _S(val, _size);
+    _S *n = new _S(val, _size);
     _array[_size] = n;
     adjust_up(_size);
     ++_size;
@@ -92,7 +92,7 @@ class HeapDeque {
   }
   void pop(bool front) {
     assert(_size != 0);
-    _S* n = front ? _deque_front : _deque_front->prev;
+    _S *n = front ? _deque_front : _deque_front->prev;
     size_type pos = n->pos;
     if (_size == 1) {
       _deque_front = nullptr;
@@ -149,7 +149,7 @@ class HeapDeque {
   size_type parent(size_type i) { return (i - 1) / 2; }
   size_type left_child(size_type i) { return i * 2 + 1; }
   void swap(size_type i, size_type j) {
-    _S* t = _array[i];
+    _S *t = _array[i];
     _array[i] = _array[j];
     _array[j] = t;
     if (_array[i]) {
@@ -162,16 +162,16 @@ class HeapDeque {
 
  private:
   Compare _cmp;
-  _S** _array;
+  _S **_array;
   size_type _array_len;
   size_type _size;
-  _S* _deque_front;
+  _S *_deque_front;
 };
 
 class Solution {
  public:
   // O(nlog(k))
-  vector<int> maxSlidingWindow(vector<int>& nums, int k) {
+  vector<int> maxSlidingWindow(vector<int> &nums, int k) {
     vector<int> r;
     HeapDeque<int, greater<int>> hd;
     int i = 0, n = nums.size();

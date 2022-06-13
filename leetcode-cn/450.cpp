@@ -12,15 +12,14 @@ struct TreeNode {
 };
 
 class Solution {
-public:
+ public:
   TreeNode *deleteNode(TreeNode *root, int key) {
     TreeNode *p = root, *parent = nullptr;
     while (p && p->val != key) {
       parent = p;
       p = p->val > key ? p->left : p->right;
     }
-    if (!p)
-      return root;
+    if (!p) return root;
     if (!p->left || !p->right) {
       TreeNode *t = p->left ? p->left : p->right;
       if (parent) {

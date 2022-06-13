@@ -8,7 +8,7 @@ class Solution {
   // time: O(n)
   // space: O(m)
   const static int M = 5001;
-  void wiggleSort(vector<int>& nums) {
+  void wiggleSort(vector<int> &nums) {
     int a[M], n = nums.size();
     memset(a, 0, sizeof(a));
     for (int i : nums) {

@@ -3,14 +3,14 @@
  */
 struct TreeNode {
   int val;
-  TreeNode* left;
-  TreeNode* right;
+  TreeNode *left;
+  TreeNode *right;
   TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 };
 
 class Solution {
  public:
-  TreeNode* inorderSuccessor(TreeNode* root, TreeNode* p) {
+  TreeNode *inorderSuccessor(TreeNode *root, TreeNode *p) {
     if (root == nullptr || p == nullptr) return nullptr;
     if (p->right) {
       p = p->right;

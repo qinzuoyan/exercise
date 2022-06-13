@@ -6,16 +6,16 @@ using namespace std;
  */
 struct ListNode {
   int val;
-  ListNode* next;
+  ListNode *next;
   ListNode() : val(0), next(nullptr) {}
   ListNode(int x) : val(x), next(nullptr) {}
-  ListNode(int x, ListNode* next) : val(x), next(next) {}
+  ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
 class Solution {
  public:
   // refer to problem 21
-  ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+  ListNode *mergeTwoLists(ListNode *list1, ListNode *list2) {
     if (!list1) return list2;
     if (!list2) return list1;
     ListNode *r, *t;
@@ -42,7 +42,7 @@ class Solution {
     return r;
   }
 
-  ListNode* mergeKLists(vector<ListNode*>& lists) {
+  ListNode *mergeKLists(vector<ListNode *> &lists) {
     if (lists.size() == 0) return NULL;
     if (lists.size() == 1) return lists[0];
     for (size_t i = 1; i < lists.size(); i++) {

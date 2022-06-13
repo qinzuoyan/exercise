@@ -3,12 +3,12 @@ using namespace std;
 
 class Solution {
  public:
-  void swap(vector<int>& nums, int x, int y) {
+  void swap(vector<int> &nums, int x, int y) {
     int t = nums[x];
     nums[x] = nums[y];
     nums[y] = t;
   }
-  void nextPermutation(vector<int>& nums) {
+  void nextPermutation(vector<int> &nums) {
     int n = nums.size();
     int i = n - 2;
     while (i >= 0 && nums[i] >= nums[i + 1]) i--;

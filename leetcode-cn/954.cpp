@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
  public:
-  bool canReorderDoubled(vector<int>& arr) {
+  bool canReorderDoubled(vector<int> &arr) {
     if (arr.empty()) {
       return true;
     }
@@ -25,7 +25,7 @@ class Solution {
       return false;
     }
     for (int i = 0; i < 2; i++) {
-      auto& m = a[i];
+      auto &m = a[i];
       for (auto it = m.begin(); it != m.end(); it++) {
         if (it->second > 0) {
           auto find = m.find(it->first << 1);

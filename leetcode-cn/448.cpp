@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
  public:
-  vector<int> findDisappearedNumbers(vector<int>& nums) {
+  vector<int> findDisappearedNumbers(vector<int> &nums) {
     int n = nums.size();
     int a[n + 1];
     memset(a, 0, sizeof(int) * (n + 1));

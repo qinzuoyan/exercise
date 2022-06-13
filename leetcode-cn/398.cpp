@@ -1,12 +1,12 @@
-#include <vector>
 #include <algorithm>
 #include <cstdlib>
 #include <ctime>
+#include <vector>
 using namespace std;
 
 class Solution {
  public:
-  Solution(vector<int>& nums) {
+  Solution(vector<int> &nums) {
     int n = nums.size();
     v.resize(n);
     for (int i = 0; i < n; i++) {

@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
  public:
-  int removeElement(vector<int>& nums, int val) {
+  int removeElement(vector<int> &nums, int val) {
     int n = nums.size();
     if (n == 0) {
       return 0;

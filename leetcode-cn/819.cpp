@@ -6,7 +6,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   string mostCommonWord(string paragraph, vector<string> &banned) {
     unordered_set<string> b(banned.begin(), banned.end());
     unordered_map<string, int> m;
@@ -18,16 +18,14 @@ public:
       } else if (p != a) {
         *p = '\0';
         string s(a);
-        if (b.find(s) == b.end())
-          m[s]++;
+        if (b.find(s) == b.end()) m[s]++;
         p = a;
       }
     }
     if (p != a) {
       *p = '\0';
       string s(a);
-      if (b.find(s) == b.end())
-        m[s]++;
+      if (b.find(s) == b.end()) m[s]++;
     }
     int n = 0;
     string r;

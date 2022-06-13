@@ -16,7 +16,7 @@ class Solution {
     return numSquares(a, n, b);
   }
 
-  int numSquares(int* a, int n, int* b) {
+  int numSquares(int *a, int n, int *b) {
     if (a[n] >= 0) {
       return a[n];
     }

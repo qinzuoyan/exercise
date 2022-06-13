@@ -4,7 +4,7 @@ using namespace std;
 class Solution {
  public:
   // O(n)
-  vector<int> productExceptSelf(vector<int>& nums) {
+  vector<int> productExceptSelf(vector<int> &nums) {
     int n = nums.size();
     vector<int> r(n);
     int left[n], right[n], s;

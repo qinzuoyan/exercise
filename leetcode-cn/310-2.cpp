@@ -5,8 +5,8 @@ using namespace std;
 
 class Solution {
  public:
-  void findLongestNodes(int n, vector<vector<int>>& n2n, int start,
-                        vector<int>& ends, vector<int>& path) {
+  void findLongestNodes(int n, vector<vector<int>> &n2n, int start,
+                        vector<int> &ends, vector<int> &path) {
     int a[n];
     memset(a, 0, sizeof(a));
     a[start] = 1;
@@ -18,7 +18,7 @@ class Solution {
     while (r.size()) {
       vector<int> t;
       for (int i : r) {
-        auto& v = n2n[i];
+        auto &v = n2n[i];
         for (int j : v) {
           if (!a[j]) {
             a[j] = 1;
@@ -36,9 +36,9 @@ class Solution {
     ends.swap(r);
   }
 
-  vector<int> findMinHeightTrees(int n, vector<vector<int>>& edges) {
+  vector<int> findMinHeightTrees(int n, vector<vector<int>> &edges) {
     vector<vector<int>> n2n(n);
-    for (auto& v : edges) {
+    for (auto &v : edges) {
       n2n[v[0]].push_back(v[1]);
       n2n[v[1]].push_back(v[0]);
     }

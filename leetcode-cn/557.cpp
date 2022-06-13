@@ -9,7 +9,7 @@ class Solution {
     while (*p) {
       if (isspace(*p)) {
         if (x) {
-          char* y = p - 1;
+          char *y = p - 1;
           while (x < y) {
             char c = *x;
             *x++ = *y;
@@ -23,7 +23,7 @@ class Solution {
       p++;
     }
     if (x) {
-      char* y = p - 1;
+      char *y = p - 1;
       while (x < y) {
         char c = *x;
         *x++ = *y;

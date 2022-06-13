@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
  public:
-  int maxRotateFunction(vector<int>& nums) {
+  int maxRotateFunction(vector<int> &nums) {
     int s = 0, x = 0, n = nums.size();
     for (int i = 0; i < n; i++) {
       s += nums[i];

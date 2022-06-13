@@ -1,10 +1,10 @@
-#include <vector>
 #include <string>
+#include <vector>
 using namespace std;
 
 class Solution {
  public:
-  bool isAlienSorted(vector<string>& words, string order) {
+  bool isAlienSorted(vector<string> &words, string order) {
     if (words.size() == 1) return true;
     int n = words.size();
     int a[26];

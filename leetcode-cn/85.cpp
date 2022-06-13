@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
  public:
-  int maximalRectangle(vector<vector<char>>& matrix) {
+  int maximalRectangle(vector<vector<char>> &matrix) {
     if (matrix.empty() || matrix[0].empty()) return 0;
     /*
     int m = matrix.size(), n = matrix[0].size();

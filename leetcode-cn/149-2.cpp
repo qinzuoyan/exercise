@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
  public:
-  int maxPoints(vector<vector<int>>& points) {
+  int maxPoints(vector<vector<int>> &points) {
     int n = points.size();
     if (n == 1) {
       return 1;

@@ -4,7 +4,7 @@ using namespace std;
 class Solution {
  public:
   // O(n^2)
-  int maxProfit(vector<int>& prices) {
+  int maxProfit(vector<int> &prices) {
     int n = prices.size();
     int a[n + 2];
     a[n - 1] = a[n] = a[n + 1] = 0;

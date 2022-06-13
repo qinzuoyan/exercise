@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
  public:
-  int maxProduct(vector<int>& nums) {
+  int maxProduct(vector<int> &nums) {
     int m = INT_MIN, d = 0, l = 0, r = 0, n = 0;
     for (int i : nums) {
       if (i == 0) {

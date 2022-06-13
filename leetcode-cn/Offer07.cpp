@@ -12,13 +12,11 @@ struct TreeNode {
 };
 
 class Solution {
-public:
+ public:
   TreeNode *buildTree(int *preorder, int *inorder, int n) {
-    if (n == 0)
-      return nullptr;
+    if (n == 0) return nullptr;
     int v = *preorder, *p = inorder;
-    while (*p != v)
-      p++;
+    while (*p != v) p++;
     TreeNode *r = new TreeNode(v);
     int l = p - inorder;
     r->left = buildTree(preorder + 1, inorder, l);

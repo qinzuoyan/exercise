@@ -4,9 +4,9 @@ using namespace std;
 class Solution {
  public:
   // O(mlog(n)) : 92ms
-  bool searchMatrix(vector<vector<int>>& matrix, int target) {
+  bool searchMatrix(vector<vector<int>> &matrix, int target) {
     int n = matrix[0].size();
-    for (auto& v : matrix) {
+    for (auto &v : matrix) {
       int i = 0, j = n - 1;
       // compare to 240.cpp, add filter
       if (target < v[i] || target > v[j]) {

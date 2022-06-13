@@ -68,7 +68,7 @@ class Graph {
   }
 
   // set to INT_MAX if not reachable
-  void djikstraShortestPath(T src, map<T, int>& dist, const T* dst = nullptr) {
+  void djikstraShortestPath(T src, map<T, int> &dist, const T *dst = nullptr) {
     // Initialising dist to inf
     dist.clear();
     for (auto p : l) {
@@ -115,7 +115,7 @@ class Graph {
 
 class Solution {
  public:
-  bool checkTrans(const string& a, const string& b) {
+  bool checkTrans(const string &a, const string &b) {
     bool diff = false;
     const char *x = a.data(), *y = b.data();
     while (*x) {
@@ -129,7 +129,7 @@ class Solution {
     return true;
   }
 
-  int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
+  int ladderLength(string beginWord, string endWord, vector<string> &wordList) {
     int n = wordList.size();
     unordered_map<string, int> m;
     for (int i = 0; i < n; i++) {

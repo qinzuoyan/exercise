@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
  public:
-  bool canReorderDoubled(vector<int>& arr) {
+  bool canReorderDoubled(vector<int> &arr) {
     if (arr.empty()) {
       return true;
     }
@@ -26,7 +26,7 @@ class Solution {
       return false;
     }
     for (int i = 0; i < 2; i++) {
-      int* m = a[i];
+      int *m = a[i];
       for (int j = 1; j <= 100000; j++) {
         if (m[j] > 0) {
           if ((m[j << 1] -= m[j]) < 0) {

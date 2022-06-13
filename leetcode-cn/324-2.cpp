@@ -8,7 +8,7 @@ class Solution {
   // time: O(nlog(n))
   // space: O(1)
   const static int M = 5001;
-  void wiggleSort(vector<int>& nums) {
+  void wiggleSort(vector<int> &nums) {
     int n = nums.size();
     sort(nums.begin(), nums.end());
     int k = (n + 1) / 2, c = n, i = 0;

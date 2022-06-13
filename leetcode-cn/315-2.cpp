@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
  public:
-  pair<int, int> sumAndInsert(int* a, int l, int r, int i, int n) {
+  pair<int, int> sumAndInsert(int *a, int l, int r, int i, int n) {
     if (n < l) {
       return pair<int, int>(a[i], 0);
     }
@@ -22,7 +22,7 @@ class Solution {
     return pair<int, int>(a[i], pr1.second + pr2.second);
   }
 
-  vector<int> countSmaller(vector<int>& nums) {
+  vector<int> countSmaller(vector<int> &nums) {
     int min_num = INT_MAX, max_num = INT_MIN;
     for (int i : nums) {
       min_num = min(min_num, i);

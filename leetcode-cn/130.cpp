@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
  public:
-  void solve(vector<vector<char>>& board) {
+  void solve(vector<vector<char>> &board) {
     int m = board.size(), n = board[0].size();
     for (int i = 1; i < m - 1; i++) {
       for (int j = 1; j < n - 1; j++) {
@@ -30,7 +30,7 @@ class Solution {
     }
   }
 
-  void trans(vector<vector<char>>& b, int m, int n, int i, int j) {
+  void trans(vector<vector<char>> &b, int m, int n, int i, int j) {
     stack<pair<int, int>> q;
     q.emplace(i, j);
     while (!q.empty()) {

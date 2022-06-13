@@ -61,13 +61,13 @@ class NumTree {
     return _a[pos].min_weight;
   }
 
-  Node* _a;
+  Node *_a;
   int _n;
 };
 
 class Solution {
  public:
-  vector<int> busiestServers(int k, vector<int>& arrival, vector<int>& load) {
+  vector<int> busiestServers(int k, vector<int> &arrival, vector<int> &load) {
     NumTree tr(k);
     int n = arrival.size(), max = 0;
     vector<int> a(k), b(k, 1);

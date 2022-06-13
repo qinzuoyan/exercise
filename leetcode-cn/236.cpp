@@ -6,19 +6,19 @@ using namespace std;
  */
 struct TreeNode {
   int val;
-  TreeNode* left;
-  TreeNode* right;
+  TreeNode *left;
+  TreeNode *right;
   TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 };
 
 class Solution {
  public:
-  TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+  TreeNode *lowestCommonAncestor(TreeNode *root, TreeNode *p, TreeNode *q) {
     if (p == q) return p;
     bool pFound = false, qFound = false;
-    deque<TreeNode*> s, pTrace, qTrace;
+    deque<TreeNode *> s, pTrace, qTrace;
     deque<bool> b;
-    TreeNode* n = root;
+    TreeNode *n = root;
     while (n || !s.empty()) {
       while (n) {
         s.push_back(n);
@@ -47,7 +47,7 @@ class Solution {
         }
       }
     }
-    TreeNode* r = nullptr;
+    TreeNode *r = nullptr;
     while (!pTrace.empty() && !qTrace.empty() &&
            pTrace.front() == qTrace.front()) {
       r = pTrace.front();

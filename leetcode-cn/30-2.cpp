@@ -7,7 +7,7 @@ using namespace std;
 
 class Solution {
  public:
-  vector<int> findSubstring(string s, vector<string>& words) {
+  vector<int> findSubstring(string s, vector<string> &words) {
     vector<int> r;
     int n = s.size(), m = words.size(), z = words[0].size();
     if (n < m * z) {
@@ -17,7 +17,7 @@ class Solution {
     int c[m], nextid = 0;
     memset(c, 0, sizeof(int) * m);
     unordered_map<string, int> stoi;
-    for (auto& w : words) {
+    for (auto &w : words) {
       auto it = stoi.find(w);
       if (it == stoi.end()) {
         c[nextid]++;

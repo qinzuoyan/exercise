@@ -1,6 +1,6 @@
-#include <vector>
-#include <cstring>
 #include <algorithm>
+#include <cstring>
+#include <vector>
 using namespace std;
 
 class Solution {

@@ -5,7 +5,7 @@ using namespace std;
 class Solution {
  public:
   // O(n)
-  vector<int> dailyTemperatures(vector<int>& temperatures) {
+  vector<int> dailyTemperatures(vector<int> &temperatures) {
     int n = temperatures.size();
     vector<int> r(n);
     stack<int> s;

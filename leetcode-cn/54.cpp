@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
  public:
-  vector<int> spiralOrder(vector<vector<int>>& matrix) {
+  vector<int> spiralOrder(vector<vector<int>> &matrix) {
     int m = matrix.size(), n = matrix[0].size();
     int x = 0, y = 0, x1 = 0, y1 = 0, x2 = n - 1, y2 = m - 1;
     int i = 0, d = 0, s = m * n;

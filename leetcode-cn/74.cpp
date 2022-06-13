@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
  public:
-  bool searchMatrix(vector<vector<int>>& matrix, int target) {
+  bool searchMatrix(vector<vector<int>> &matrix, int target) {
     int m = matrix.size(), n = matrix[0].size();
     if (target < matrix[0][0] || target > matrix[m - 1][n - 1]) {
       return false;

@@ -6,7 +6,7 @@ using namespace std;
 class Solution {
  public:
   // O(n)
-  int trap(vector<int>& height) {
+  int trap(vector<int> &height) {
     int n = height.size(), sum = 0;
     stack<int> s;
     for (int i = 0; i < n; i++) {

@@ -1,10 +1,10 @@
-#include <vector>
 #include <map>
+#include <vector>
 using namespace std;
 
 class Solution {
  public:
-  vector<int> findRightInterval(vector<vector<int>>& intervals) {
+  vector<int> findRightInterval(vector<vector<int>> &intervals) {
     int n = intervals.size();
     map<int, int> m;
     for (int i = 0; i < n; ++i) {

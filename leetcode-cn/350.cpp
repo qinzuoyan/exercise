@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
  public:
-  vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
+  vector<int> intersect(vector<int> &nums1, vector<int> &nums2) {
     int a[1001], b[1001];
     memset(a, 0, sizeof(a));
     memset(b, 0, sizeof(b));

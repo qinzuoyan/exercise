@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
  public:
-  vector<vector<int>> threeSum(vector<int>& nums) {
+  vector<vector<int>> threeSum(vector<int> &nums) {
     int a[3];
     vector<vector<int>> r;
     size_t n = nums.size();

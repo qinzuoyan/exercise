@@ -4,7 +4,7 @@ using namespace std;
 class CQueue {
   stack<int> t, h;
 
-public:
+ public:
   CQueue() {}
 
   void appendTail(int value) { t.push(value); }

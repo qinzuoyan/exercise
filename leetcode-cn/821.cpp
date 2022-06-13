@@ -7,10 +7,12 @@ class Solution {
   vector<int> shortestToChar(string s, char c) {
     int n = s.size(), h = -1, t, m, k = 0;
     vector<int> v(n);
-    while (++h < n && s[h] != c);
+    while (++h < n && s[h] != c)
+      ;
     do {
       t = h;
-      while (++h < n && s[h] != c);
+      while (++h < n && s[h] != c)
+        ;
       m = (h + t) / 2;
       while (k <= m) {
         v[k] = (k <= t ? t - k : k - t);

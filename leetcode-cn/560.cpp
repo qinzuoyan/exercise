@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
  public:
-  int subarraySum(vector<int>& nums, int k) {
+  int subarraySum(vector<int> &nums, int k) {
     int c = 0;
     for (size_t i = 0; i < nums.size(); i++) {
       int s = 0;
