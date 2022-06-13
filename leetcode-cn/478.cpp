@@ -1,6 +1,6 @@
+#include <cmath>
 #include <cstdlib>
 #include <ctime>
-#include <cmath>
 #include <vector>
 using namespace std;
 
@@ -19,10 +19,14 @@ class Solution {
       if (x * x + y * y <= rr_) {
         int t = rand() % 4;
         switch (t) {
-          case 0: return {x_ + x, y_ + y};
-          case 1: return {x_ + x, y_ - y};
-          case 2: return {x_ - x, y_ + y};
-          case 3: return {x_ - x, y_ - y};
+          case 0:
+            return {x_ + x, y_ + y};
+          case 1:
+            return {x_ + x, y_ - y};
+          case 2:
+            return {x_ - x, y_ + y};
+          case 3:
+            return {x_ - x, y_ - y};
         }
       }
     }

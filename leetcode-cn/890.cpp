@@ -1,5 +1,5 @@
-#include <string>
 #include <cstring>
+#include <string>
 #include <vector>
 using namespace std;
 
@@ -14,10 +14,10 @@ class Solution {
       for (i = 0; i < n; ++i) {
         int k = pattern[i] - 'a';
         if (!a[k]) {
-            if (a[26 + s[i] - 'a']++ != 0) break;
-            a[k] = s[i];
-        }
-        else if (a[k] != s[i]) break;
+          if (a[26 + s[i] - 'a']++ != 0) break;
+          a[k] = s[i];
+        } else if (a[k] != s[i])
+          break;
       }
       if (i == n) r.push_back(s);
     }
