@@ -1,0 +1,6 @@
+Lock free queue
+===============
+
+LockFreeQueue is a lock-free queue implementation.
+
+Refer to https://coolshell.cn/articles/8239.html .
