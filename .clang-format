@@ -1,0 +1,43 @@
+---
+# Use the Google style in this project.
+BasedOnStyle: Google
+
+---
+Language: Cpp
+
+ColumnLimit: 80
+
+# Include headers in the order suggested by google code style guide
+IncludeBlocks: Regroup
+IncludeCategories:
+  # C system headers (more precisely: headers in angle brackets with the .h extension)
+  - Regex: '^<[[:alnum:]|\/|_|-]+\.h>'
+    Priority: 10
+
+  # C++ standard library headers (without file extension)
+  - Regex: '^<[[:alnum:]|\/|_|-]+>'
+    Priority: 20
+
+  # Other libraries' headers (third party libraries)
+  - Regex: '^<'
+    Priority: 30
+
+  # Others
+  - Regex: '^"'
+    Priority: 50
+
+# We prefer to write "int& foo" rather than "int &foo".
+DerivePointerAlignment: false
+PointerAlignment: Left
+
+# If a function call or braced initializer list doesn’t fit on a line, allow
+# putting all arguments onto the next line.
+# callFunction(
+#   a, b, c, d);
+AllowAllArgumentsOnNextLine: true
+
+# If the function declaration doesn’t fit on a line, allow putting all
+# parameters of a function declaration onto the next line.
+# void myFunction(
+#   int a, int b, int c, int d, int e);
+AllowAllParametersOfDeclarationOnNextLine: true
